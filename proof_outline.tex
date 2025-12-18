@@ -1,0 +1,290 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{esint}
+\usepackage{pdfpages}
+\usepackage{geometry}
+
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{references.bib} 
+
+\title{Approximate Gumbel Last Passage Percolation}
+\author{James Stephens}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		We study the multi-edge last passage percolation (LPP) model $T_{m,n}^{(N)}$ introduced in \cite{gumbellpp}; we focus on the special case of underlying exponential distribution. If the number of edges $N \sim n^\alpha$ for $\alpha > 0,$ we show that Tracy--Widom fluctuations with fixed KPZ scaling constants emerge in the large-$n$ limit only when $\alpha > 2/3$. We introduce a coupling between the multi-edge LPP and LPP with Gumbel weights; with this coupling, we exhibit the former as a perturbation of the latter. The magnitude of this perturbation is bounded above using an auxiliary LPP model and below by using the Gumbel LPP.
+	\end{abstract}
+	
+	\section{Introduction}
+	
+	Let \(\{\xi_e^{(i)}\}_{e,i}\) be an i.i.d.\ family of rate-1 exponential random variables, indexed by nearest-neighbor edges \(e\) of \(\mathbb{Z}^2\) and \(i \in \mathbb{N}\). Define
+	\[
+	Y^{(N)}_e = \max_{1 \leq i \leq N} \xi_e^{(i)} - \log N.
+	\]
+	We consider the directed last-passage percolation (LPP) model
+	\[
+	T_{m,n}^{(N)} = \max_{\pi : (0,0) \to (m,n)} \sum_{e \in \pi} Y_e^{(N)},
+	\]
+	where the maximum is taken over all up-right paths in \(\mathbb{Z}^2\) from \((0,0)\) to \((m,n)\).
+	
+	This is a special case of the multi-edge LPP introduced in \cite{gumbellpp}, since as \(N \to \infty\), each \(Y_e^{(N)}\) converges in distribution to a Gumbel random variable. We therefore refer to this model as the \(N\)-approximate Gumbel LPP. In this setting we provide an affirmative answer to Question~2.1 of \cite{gumbellpp}.
+	
+	\begin{theorem}
+		Let \(\alpha > 2/3\), and let \(C_g\) and \(\sigma_g\) denote the scaling constants for Gumbel LPP computed in \cite{gumbellpp} (\(C_g \approx 3.927\), \(\sigma_g \approx 2.563\)). Then
+		\[
+		\lim_{n \to \infty} \mathbb{P}\!\left(\frac{T_{n,n}^{(N = \lfloor n^\alpha\rfloor)} - C_g n}{\sigma_g n^{1/3}} \leq r\right) 
+		= F_{\mathrm{GUE}}(r).
+		\]
+		If \(\alpha \leq 2/3\), then
+		\[
+		\frac{T_{n,n}^{(N = \lfloor n^\alpha\rfloor)} - C_g n}{\sigma_g n^{1/3}}
+		\]
+		does not converge in distribution to the Tracy--Widom GUE law.
+	\end{theorem}
+	
+	The proof proceeds by coupling the \(N\)-approximate Gumbel LPP to the true Gumbel LPP, i.e. the model
+	\[
+	T_{m,n} = \max_{\pi : (0,0) \to (m,n)} \sum_{e \in \pi} Y_e,
+	\]
+	where the \(Y_e\) are i.i.d.\ Gumbel random variables.
+	
+	
+	\section{Coupling}
+	
+	Write 
+	\[
+	f_N(x) = \mathbb{P}\left(Y_e^{(N)} \leq x\right) 
+	= \mathbb{P}\left(\max_{1 \leq i \leq N}\xi_e^{(i)} \leq x + \log(N) \right) 
+	= \mathbb{P}\left(\xi_e^{(1)} \leq x + \log(N)\right)^N 
+	= \left(1 - \frac{e^{-x}}{N} \right)^N
+	\]
+	for $x > -\log N$ (and $f_N(x)=0$ for $x \le -\log N$), for the CDF of any of the edge weights in the $N$-approximate Gumbel LPP model. Observe $f_N^{-1}: (0,1) \to \mathbb{R}$ is given by $f_N^{-1}(u) = - \ln\!\big(N(1-u^{1/N})\big).$ The CDF of a Gumbel is by definition $g(x) = e^{-e^{-x}}.$ Therefore if $Y$ is Gumbel distributed, the random variable $f_N^{-1}(g(Y))$ is distributed as $Y_e^{(N)}$. Write 
+	\[
+	Y_N = h_N(Y) + Y
+	\]
+	where 
+	\[
+	h_N(x) = f_N^{-1}(g(x)) - x =  - \ln \left( N \left( 1 - \left(e^{-e^{-x}} \right)^{1/N} \right) \right) - x.
+	\]
+	
+	\begin{lemma}
+		For $N\ge 1$ the function
+		\[
+		h_N(x) \;=\; - \ln \!\Big( N \big( 1 - e^{-e^{-x}/N} \big) \Big) - x
+		\]
+		is convex in $x$ and satisfies
+		\[
+		0 < h_N(x) \le \frac{e^{-x}}{N}, \qquad x\in\mathbb{R}.
+		\]Finally for $x > 0,$ $$\frac{e^{-x}}{3N} \leq h_N(x).$$
+	\end{lemma}
+	
+	The proof is elementary and given in Section $4.$ 
+	
+	With this lemma, the coupling between $Y$ and $Y_N$ leads to a coupling between $T_{m,n}^{(N)}$ and $T_{m,n}$ where $T_{m,n}^{(N)} \geq T_{m,n}.$ From now on we assume the two models are coupled in this way. 
+	
+	With this coupling, $T_{m,n}^{(N)} - T_{m,n}$ is a nonnegative quantity. We view $T_{m,n}^{(N)}$ as a perturbation of $T_{m,n}.$ We make the following observation about such pairs of models. 
+	
+	\begin{lemma}
+		Let $\Pi$ be a finite index set (for example the set of up-right paths in $n \times n$ percolation). Consider functions $S_A: \Pi \to \mathbb{R}$ and $S_B: \Pi \to \mathbb{R}.$ For instance, if $\Pi$ is a set of paths, define
+		\[
+		S_A(\pi) = \sum_{e\in\pi} A_e, 
+		\qquad 
+		S_B(\pi) = \sum_{e\in\pi} B_e,
+		\]
+		for edge weights arrays $(A_e)_e,(B_e)_e$.
+		Set
+		\[
+		M_A = \max_{\pi\in\Pi} S_A(\pi), 
+		\quad 
+		M_{A+B} = \max_{\pi\in\Pi}\big( S_A(\pi) + S_B(\pi)\big),
+		\]
+		\[
+		m_B = \min_{\pi\in\Pi} S_B(\pi),
+		\quad 
+		M_B = \max_{\pi\in\Pi} S_B(\pi).
+		\]
+		If $\pi^*$ achieves $M_A,$ the following inequalities hold:
+		\[
+		m_B \leq S_B(\pi^*)  \;\le\; M_{A+B} - M_A \;\le\; M_B.
+		\]
+	\end{lemma}
+	
+	\begin{proof}
+		For the upper bound: for any $\pi\in\Pi$,
+		\[
+		S_A(\pi) + S_B(\pi) \;\le\; S_A(\pi) + M_B,
+		\]
+		so taking maxima yields $M_{A+B} \le M_A + M_B$.
+		
+		For the lower bound: if $\pi^*$ achieves $M_A$, then
+		\[
+		M_{A+B} \;\ge\; S_A(\pi^*) + S_B(\pi^*) \;=\; M_A + S_B(\pi^*).
+		\]
+	\end{proof}
+	
+	Our case is $A_e = Y_e,$ a Gumbel edge weight, and $B_e = h_N(Y_e),$ the positive perturbation. Then $M_{A + B}$ is LPP with edge weights given by $Y_e + h_N(Y_e).$ Our bounds on $h_N$ mean these edge weights obey $0 < h_N(Y_e) \leq \frac{\exp(-Y_e)}{N}.$ Since $Y_e$ is Gumbel distributed, $\exp(-Y_e)$ is distributed as a rate $1$ exponential.
+	
+	Let $\pi^*_{n,n}$ be the (random, almost surely unique) geodesic of Gumbel LPP, i.e. the up-or-right path from $(0,0)$ to $(n,n)$ with the maximal sum of edge weights. Define $$\ell^{(N)}_{n,n} = \sum_{e \in \pi^*_{n,n}} h_N(Y_e).$$The path $\pi^*_{n,n}$ has $2n$ steps, so we have $$\frac{\ell^{(N)}_{n,n}}{2n} = \sum_{e \in \pi^*_{n,n}}\frac{ h_N(Y_e)}{2n} \geq h_N\left( \sum_{e \in \pi^*_{n,n}}\frac{ Y_e}{2n} \right) = h_N\!\left(\frac{T_{n,n}}{2n}\right)$$where the inequality is Jensen's using the convexity of $h_N.$
+	
+	Write $L_{m,n}$ to be the directed last passage time with rate $1$ exponential edge weights. Lemma $2$ means that $$\ell^{(N)}_{n,n} \leq T_{n,n}^{(N)} - T_{n,n} \leq \frac{L_{n,n}}{N}$$where we assumed the exponentials in $L_{n,n}$ are coupled to $T_{n,n}.$
+	
+	\begin{lemma}[Existence of time constants] There exist finite positive constants $D_\ell$ and $D_L$ such that $T_{n,n}/n$ converges almost surely (hence in probability and distribution) to $D_\ell$ and $L_{n,n}/n$ to $D_L.$ 
+	\end{lemma}
+	
+	\begin{proof} $T_{m,n}$ and $L_{m,n}$ are superadditive arrays. Apply Kingman's subadditive ergodic theorem. \cite{gumbellpp} means that $D_\ell \approx 3.927.$ $D_L > D_\ell$ because exponential LPP is a positive perturbation of Gumbel LPP (take $N$ = 1).\end{proof}
+	
+	
+	Hence there is a constant $C_L$ such that for any probability $p,$ there exists a constant $M$ so that for all $n > M,$ we have $L_{n,n}/n < C_L$ with the inequality holding with probability at least $p$. Furthermore, there is $D_\ell'$ and $M > 0$ such that $0 \leq T_{n,n}/2n \leq D_\ell'$ for all $n > M$ with probability at least $p.$  Here $M$ depends on $p,$ but $C_L$ and $D_\ell'$ do not. We have then that the following holds with probability at least $p$: $$\ell^{(N)}_{n,n} \geq 2n h_N(T_{n,n}/2n) \geq 2n\exp(-T_{n,n}/2n)/3N \geq \frac{2n \exp(-D_\ell')}{3N}$$ where the second inequality uses our lower bound for $h_N.$  We summarize this by writing with $C_\ell = 2\exp(-D_\ell')/3,$ \begin{equation}
+		\frac{nC_\ell}{N} \leq T_{n,n}^{(N)} - T_{n,n} \leq \frac{nC_L}{N}
+	\end{equation}where the inequalities hold with probability at least $p$ for all $n > M$ where $M$ depends only on $p.$
+	Corollary $1.1$ of \cite{gumbellpp} says \[
+	\lim_{n \to \infty} \mathbb{P} \left(\frac{T_{n,n} - C_g n}{\sigma_g n^{1/3}} \leq r\right) = F_{\mathrm{GUE}}(r).
+	\]Hence if $$\frac{T_{n,n}^{(N = f(n))} - T_{n,n}}{\sigma_g n^{1/3}}$$converges in distribution to $0,$ by Slutsky's theorem, 
+	
+	\[
+	\lim_{n \to \infty} \mathbb{P} \left(\frac{T_{n,n}^{(N = f(n))} - C_g n}{\sigma_g n^{1/3}} \leq r\right) = F_{\mathrm{GUE}}(r).
+	\]We have that $$0 \leq \frac{T_{n,n}^{(N = f(n))} - T_{n,n}}{\sigma_g n^{1/3}} \leq \frac{n C_L}{\sigma_g N n^{1/3}}$$where the inequality holds with probability tending to $1$ as $n$ grows. Hence if $N = f(n)$ grows faster than $n^{2/3},$ e.g. for $f(n) = \lceil n^\alpha \rceil$ for $\alpha > 2/3,$ we have the required convergence in distribution. On the other hand, since $$\frac{n C_\ell}{\sigma_g N n^{1/3}} \leq \frac{T_{n,n}^{(N = f(n))} - T_{n,n}}{\sigma_g n^{1/3}}$$again with probability at least $p,$ if $N$ grows slower than $n^{2/3},$ we have $$\lim_{n \to \infty} \mathbb{P} \left(\frac{T_{n,n}^{(N = f(n))} - C_g n}{\sigma_g n^{1/3}} \leq r\right) < F_{\mathrm{GUE}}(r).$$ In fact, if for example $N = \lfloor n^\alpha \rfloor$ with $0 < \alpha < 2/3,$ the error term $\frac{T_{n,n}^{(N = n^\alpha)} - T_{n,n}}{\sigma_g n^{1/3}}$ is bounded below by $K n^{2/3 - \alpha}$ for some $K>0$ with arbitrarily high probability. Hence there cannot be constants $C_\alpha$ and $\sigma_\alpha$ such that $$\lim_{n \to \infty} \mathbb{P} \left(\frac{T_{n,n}^{(N = f(n))} - C_\alpha n}{\sigma_\alpha n^{1/3}} \leq r\right) = F_{\mathrm{GUE}}(r).$$ The situation again changes when $\alpha = 0,$ i.e. $N = 1.$ Here, the error term is of order $n^{2/3},$ so it can be canceled with an appropriate choice of $C_0$ and $\sigma_0.$ Of course, this must be the case, because the $N = 1$ case is exponential LPP. 
+	
+	If $N=f(n)$ satisfies $n^{2/3}/N \to \kappa \in (0,\infty)$ (e.g.\ $N \sim c\,n^{2/3}$ with $c=\kappa^{-1}$), then by Equation~(1),
+	\[
+	\frac{C_\ell}{\sigma_g}\,\kappa \;\lesssim\; \frac{T_{n,n}^{(N)}-T_{n,n}}{\sigma_g n^{1/3}} \;\lesssim\; \frac{C_L}{\sigma_g}\,\kappa
+	\]
+	with probability tending to $1$ as $n\to\infty$. Thus the perturbation survives at the $n^{1/3}$ scale and produces a non-vanishing shift of order $\kappa$. In particular, any subsequential limit of
+	\[
+	\frac{T_{n,n}^{(N)}-C_g n}{\sigma_g n^{1/3}}
+	\]
+	must be a translate of the Tracy--Widom GUE law by some nonnegative amount in the interval $\big[\,(C_\ell/\sigma_g)\kappa,\,(C_L/\sigma_g)\kappa\,\big]$. 
+	
+	
+	\section{Numerics and Discussion}
+	
+	We will provide numerical evidence for Equation $(1)$ by estimating $C_\ell$ and $C_L$ and simulating. Observe that $C_\ell = \frac{2}{3}\exp(-D_\ell')$ where $D_\ell'$ is a constant such that $0 \leq T_{n,n}/2n \leq D_\ell'$ with high probability for all sufficiently large $n$. Similarly $C_L$ is a constant such that $L_{n,n}/n < C_L$ with high probability for all sufficiently large $n.$ We estimate these constants through simulation of Gumbel and exponential LPP. We infer from the figures below that reasonable values to keep in mind when parsing Equation $1$ are $C_L = 4.5$ and $C _\ell = \frac{2}{3}\exp(-4.25).$ 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.65\textwidth]{explpp.png} 
+		\caption{A simulation of last-passage times with exponential edge weights ($50$ trials per grid size).}
+	\end{figure} 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.65\textwidth]{gumbellpp.png} 
+		\caption{A simulation of last-passage times with Gumbel edge weights ($50$ trials per grid size). Recall our error term is related to $\exp\!\big(-T_{n,n}/(2n)\big)$, so an upper bound on Gumbel LPP translates to a lower bound on the error term.}
+	\end{figure} 
+	
+	Heuristically speaking, $C_\ell/N$ and $C_L/N$ bound below and above twice (there are $2n$ edges per path) the ``typical value" of the per-edge error contribution, i.e. something like $h_N(Y_e)$ where $Y_e$ is a Gumbel. Note $Y_e$ has expectation $\gamma \equiv .57721,$ the Euler-Mascheroni constant. The Taylor expansion of $h_N$ in $1/N$ suggests $h_N(x)$ is well-estimated by the quantity $h_N(x) \sim e^{-x}/2N.$ Our heuristic therefore suggests that $C_\ell$ and $C_L$ are crude bounds on a quantity similar to $C_1 = e^{-.57721}.$
+	
+	Furthermore, it is reasonable to expect that $C_1/2N$ is an over-estimate of the per-edge error contribution $h_N(Y_e).$ The Gumbel and $N$-approximate Gumbel models select paths along edges with large weights; $h_N(x)$ is decreasing in $x,$ so these models select edges with smaller errors. 
+	
+	This reasoning is visible in numerical data. 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.65\textwidth]{couplediff.png} 
+		\caption{A simulation of the difference of coupled last-passage times in the Gumbel and $n^\alpha$-approximate Gumbel model for $\alpha=.5.$ The solid red line plots $C_1 n^{1-\alpha}$ and the dashed red line plots $\frac{C_1}{2} n^{1-\alpha}$.}
+	\end{figure} 
+	
+	
+	
+	\section{Proof of Lemma $1$}
+	
+	For $N\ge 1$ the function
+	\[
+	h_N(x)\;=\; - \ln \!\Big( N \big( 1 - e^{-e^{-x}/N} \big) \Big) - x
+	\]
+	is convex in $x$ and satisfies, for all $x\in\mathbb{R}$,
+	\[
+	0 < h_N(x) \le \frac{e^{-x}}{N}.
+	\]
+	Moreover, for $x>0$,
+	\[
+	\frac{e^{-x}}{3N} \le h_N(x).
+	\]
+	
+	\begin{proof}
+		We will write
+		\[
+		y:=\frac{e^{-x}}{N}\in(0,\infty)\qquad\text{so}\qquad
+		h_N(x)=-\ln\!\left(\frac{1-e^{-y}}{y}\right).
+		\]
+		We repeatedly use the elementary bounds (strict when $z\neq0$):
+		\[
+		\text{(I1)}\; 1+z\le e^{z},\qquad
+		\text{(I2)}\; 1-z\le e^{-z}.
+		\]
+		
+		\medskip
+		\noindent\textbf{Positivity and the upper bound.}
+		
+		By (I2),
+		\[
+		\frac{1-e^{-y}}{y}<1\quad\Rightarrow\quad h_N(x)>0.
+		\]
+		For the upper bound, (I1) gives $(1+y)e^{-y}\le 1$, i.e. $ye^{-y}\le 1-e^{-y}$ and thus
+		\[
+		\frac{1-e^{-y}}{y}\ge e^{-y}
+		\quad\Rightarrow\quad
+		h_N(x)=-\ln\!\Big(\tfrac{1-e^{-y}}{y}\Big)\le -\ln(e^{-y})=y=\frac{e^{-x}}{N}.
+		\]
+		
+		\medskip
+		\noindent\textbf{Convexity.}
+		
+		Write $\phi(y):=-\ln\!\big(\frac{1-e^{-y}}{y}\big)$ so that $h_N(x)=\phi(y)$ with $y=e^{-x}/N$.
+		A direct differentiation yields
+		\[
+		\phi'(y)=\frac{1}{y}-\frac{e^{-y}}{1-e^{-y}},
+		\qquad
+		\phi''(y)=-\frac{1}{y^{2}}+\frac{e^{-y}}{(1-e^{-y})^{2}}.
+		\]
+		Since $y'=-y$ and $y''=y$, the chain rule gives
+		\[
+		h_N''(x)=y^{2}\phi''(y)+y\phi'(y)
+		=\frac{y\,e^{-y}}{1-e^{-y}}\left(\frac{y}{1-e^{-y}}-1\right).
+		\]
+		By (I2), $1-e^{-y}\le y$, hence the term in parentheses is $\ge 0$. Because $y>0$ and $e^{-y}>0$, we obtain $h_N''(x)\ge 0$.
+		
+		\medskip
+		\noindent\textbf{Lower bound for $x>0$.}
+		
+		Let $y:=e^{-x}/N$. Since $x>0$ and $N\ge1$, we have $0<y\le1$. We want to prove
+		\[
+		h_N(x)=-\ln\!\Big(\tfrac{1-e^{-y}}{y}\Big)\;\ge\;\tfrac{y}{3},
+		\]
+		which is equivalent to
+		\[
+		\frac{1-e^{-y}}{y}\;\le\;e^{-y/3}, \qquad (0<y\le1).
+		\]Consider $g(t):=1-t+\tfrac{t^{2}}{2} - \frac{t^3}{6}-e^{-t}$ for $t\ge0$. Then
+		\[
+		g'''(t)=-1+e^{-t}\le0, \quad g''(0) = g'(0)= g(0) = 0
+		\]
+		so $g(t)\le0$ for all $t\ge0$. Hence $$1-e^{-t} \leq t-\frac{t^2}{2}+\frac{t^3}{6}$$so $$\frac{1 - e^{-t}}{t}  \leq 1 - \frac{t}{2} + \frac{t^2}{6} \leq 1 - \frac{t}{3}$$where the last inequality holds whenever $0 \leq t \leq 1.$ Then (I2) gives the required inequality. 
+		
+		
+	\end{proof}
+	
+	
+	
+	\printbibliography
+	
+	
+\end{document}
