@@ -1,0 +1,1 @@
+{"declarations":[],"imports":["Init","Aesop","Mathlib.Init"],"instances":[],"name":"Mathlib.Tactic.Finiteness.Attr"}
