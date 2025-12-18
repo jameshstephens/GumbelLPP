@@ -1,4 +1,22 @@
-import Mathlib
+-- Core Analysis: Exp, Log, Derivatives, and Convexity
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+import Mathlib.Analysis.SpecialFunctions.Log.Deriv
+import Mathlib.Analysis.Convex.Deriv
+import Mathlib.Analysis.Calculus.MeanValue
+
+-- Tactics used in the proof
+import Mathlib.Tactic.Linarith    -- For nlinarith
+import Mathlib.Tactic.FieldSimp   -- For field_simp
+import Mathlib.Tactic.FunProp     -- For fun_prop
+import Mathlib.Tactic.GCongr      -- For gcongr
+import Mathlib.Tactic.Ring        -- For ring/ring_nf
+import Mathlib.Tactic.NormNum     -- For norm_num
+import Mathlib.Tactic.Positivity  -- For positivity
+import Aesop                      -- For aesop
+
+-- Unused scopes in this specific snippet (Uncomment if needed)
+-- import Mathlib.Algebra.BigOperators.Group.Finset -- For open scoped BigOperators
+-- import Mathlib.Data.Set.Pointwise.Basic          -- For open scoped Pointwise
 
 set_option linter.mathlibStandardSet false
 
