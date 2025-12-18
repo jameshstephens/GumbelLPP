@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1766073051 "print.tex" "/home/js/GumbelLPP/blueprint/print/print.pdf" "print" 1766073052
+["pdflatex"] 1766075898 "print.tex" "/home/js/GumbelLPP/blueprint/print/print.pdf" "print" 1766075899
   "/etc/texmf/web2c/texmf.cnf" 1766028159 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/js/GumbelLPP/blueprint/print/print.aux" 1766073052 886 e70b94a0c3a92675651c794c4a1fbfdf "pdflatex"
-  "/home/js/GumbelLPP/blueprint/print/print.out" 1766073052 143 e5acec8a5a75a955e049121e600f1f54 "pdflatex"
+  "/home/js/GumbelLPP/blueprint/print/print.aux" 1766075899 837 0d3cc483b39e6372478a372a90511281 "pdflatex"
+  "/home/js/GumbelLPP/blueprint/print/print.out" 1766075899 143 e5acec8a5a75a955e049121e600f1f54 "pdflatex"
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -87,7 +87,7 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1766028563 3606620 9c0cb282f2aca8715b43a9f3cd90069b ""
-  "content.tex" 1766073027 1181 39750fa2eb2ffee12c8c73c934776e3b ""
+  "content.tex" 1766075737 1112 75a986ef720c92e5f5363f4e537dc90c ""
   "macros/common.tex" 1766072612 820 60fafcc3aa944a5e60030581a943ef6b ""
   "macros/print.tex" 1766072612 1101 87627b2ec24fef68edc71c13f43f7bab ""
   "print.tex" 1766072612 1145 076a6acc14f30f1c5fd2b7e0129861b3 ""

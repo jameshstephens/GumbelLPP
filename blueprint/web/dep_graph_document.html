@@ -63,6 +63,44 @@
 <div id="statements">
 
     
+    <div class="dep-modal-container" id="a0000000004_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="a0000000004" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">2</span></div>
+    <div class="thm_thmcontent"><p>Let \(N \ge 1\). The function \(h_N\) satisfies the following properties: </p>
+<ol class="enumerate">
+  <li><p>\(h_N\) is convex on \(\mathbb {R}\); </p>
+</li>
+  <li><p>For all \(x \in \mathbb {R}\), \(0 {\lt} h_N(x) \le \frac{e^{-x}}{N}\); </p>
+</li>
+  <li><p>For all \(x {\gt} 0\), \(\frac{e^{-x}}{3N} \le h_N(x)\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="index.html#a0000000004">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="def:h_N_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -93,44 +131,6 @@
     
       </div>
     </div>
-
-
-    
-    <div class="dep-modal-container" id="lem:h_N_bounds_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="lem:h_N_bounds" style="display: none">
-    <div class="thm_thmheading">
-      <span class="lemma_thmcaption">
-      Lemma
-      </span>
-      <span class="lemma_thmlabel">2</span></div>
-    <div class="thm_thmcontent"><p>   Let \(N \ge 1\). The function \(h_N\) satisfies the following properties: </p>
-<ol class="enumerate">
-  <li><p>\(h_N\) is convex on \(\mathbb {R}\); </p>
-</li>
-  <li><p>For all \(x \in \mathbb {R}\), \(0 {\lt} h_N(x) \le \frac{e^{-x}}{N}\); </p>
-</li>
-  <li><p>For all \(x {\gt} 0\), \(\frac{e^{-x}}{3N} \le h_N(x)\). </p>
-</li>
-</ol>
-</div>
-
-    <a class="latex_link" href="index.html#lem:h_N_bounds">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/lemma_1">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
 </div>
 </div> <!-- content -->
 </div> <!-- wrapper -->
@@ -150,7 +150,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:h_N"	[color=green,		fillcolor="#B0ECA3",		label=h_N,		shape=box,		style=filled];	"lem:h_N_bounds"	[color=green,		fillcolor="#1CAC78",		label=h_N_bounds,		shape=ellipse,		style=filled];	"def:h_N" -> "lem:h_N_bounds"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:h_N"	[color=green,		fillcolor="#B0ECA3",		label=h_N,		shape=box,		style=filled];	a0000000004	[color=blue,		fillcolor="#1CAC78",		label=a0000000004,		shape=ellipse,		style=filled];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {
