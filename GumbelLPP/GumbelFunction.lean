@@ -16,6 +16,7 @@ noncomputable def h (N : ℝ) (x : ℝ) : ℝ :=
 /-
 Lemma 1: Convexity and bounds for h_N(x).
 -/
+set_option maxHeartbeats 600000 in
 theorem lemma_1 (N : ℝ) (hN : 1 ≤ N) :
     ConvexOn ℝ Set.univ (h N) ∧
     (∀ x, 0 < h N x ∧ h N x ≤ Real.exp (-x) / N) ∧

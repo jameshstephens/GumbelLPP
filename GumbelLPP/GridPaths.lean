@@ -1,4 +1,4 @@
-import Imports
+import GumbelLPP.Imports
 
 /-!
 # Grid Paths and Last Passage Percolation

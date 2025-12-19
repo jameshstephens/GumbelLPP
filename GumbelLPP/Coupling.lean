@@ -137,8 +137,8 @@ theorem coupling_lower_bound (n : ℕ) (N : ℝ) (hN : 1 ≤ N) {Ω : Type*} (Y 
             exact h_pi_star_length h_pi_star.1 ▸ by push_cast; ring;
           have h_jensen : ∀ (f : ℝ → ℝ), ConvexOn ℝ (Set.univ : Set ℝ) f → ∀ (x : List ℝ), x.length = 2 * n → (List.map f x).sum ≥ 2 * n * f ((List.sum x) / (2 * n)) := by
             intros f hf x hx_length
-            have h_jensen : (∑ i ∈ Finset.range (2 * n), f (x.get! i)) ≥ 2 * n * f ((∑ i ∈ Finset.range (2 * n), x.get! i) / (2 * n)) := by
-              have h_jensen : (∑ i ∈ Finset.range (2 * n), (1 / (2 * n)) * f (x.get! i)) ≥ f ((∑ i ∈ Finset.range (2 * n), (1 / (2 * n)) * x.get! i)) := by
+            have h_jensen : (∑ i ∈ Finset.range (2 * n), f (x.getD i 0)) ≥ 2 * n * f ((∑ i ∈ Finset.range (2 * n), x.getD i 0) / (2 * n)) := by
+              have h_jensen : (∑ i ∈ Finset.range (2 * n), (1 / (2 * n)) * f (x.getD i 0)) ≥ f ((∑ i ∈ Finset.range (2 * n), (1 / (2 * n)) * x.getD i 0)) := by
                 apply ConvexOn.map_sum_le hf;
                 · exact fun _ _ => by positivity;
                 · simp +decide [ hn ];
@@ -148,8 +148,8 @@ theorem coupling_lower_bound (n : ℕ) (N : ℝ) (hN : 1 ≤ N) {Ω : Type*} (Y 
               convert mul_le_mul_of_nonneg_left h_jensen ( show ( 0 : ℝ ) ≤ 2 * n by positivity ) using 1 ; ring_nf ; norm_num [ hn ];
             convert h_jensen using 1;
             · rw [ ← hx_length, Finset.sum_range ];
-              simp +decide [ List.sum_eq_foldr, Finset.sum_range, List.get! ];
-            · norm_num [ ← hx_length, Finset.sum_range, List.get! ];
+              simp +decide [ List.sum_eq_foldr, Finset.sum_range, List.getD ];
+            · norm_num [ ← hx_length, Finset.sum_range, List.getD ];
           convert h_jensen ( fun x => h N x ) ( lemma_1 N hN |>.1 ) ( List.map ( fun e => Y e ω ) pi_star ) _ using 1;
           · rw [ List.map_map ];
             rfl;
@@ -170,4 +170,4 @@ lemma coupling_ineq_lift (n : ℕ) (N : ℝ) (hN : 1 ≤ N) {Ω : Type*} (Y : Ed
       refine' ⟨ _, _ ⟩;
       · refine' le_trans _ ( coupling_lower_bound n N hN Y ω );
         exact mul_nonneg ( by positivity ) ( lemma_1 N hN |>.2.1 _ |>.1.le );
-      · exact?
+      · exact coupling_upper_bound n N hN Y ω

@@ -1,1 +1,0 @@
-{"declarations":[],"imports":["Init","Mathlib.Tactic.Linarith.Frontend","Mathlib.Tactic.NormNum","Mathlib.Tactic.Hint"],"instances":[],"name":"Mathlib.Tactic.Linarith"}

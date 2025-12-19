@@ -1,0 +1,207 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["8916b12359241a56.olean"],
+  "i": "24f8e91ad2c6480d.ilean",
+  "c": "f49db3f599c8322b.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/js/GumbelLPP/.lake/packages/batteries/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/Qq/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/aesop/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/importGraph/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/plausible/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/MD4Lean/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/BibtexQuery/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/UnicodeBasic/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/Cli/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/mathlib/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/checkdecls/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/doc-gen4/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/build/lib/lean /home/js/.elan/toolchains/leanprover--lean4---v4.27.0-rc1/bin/lean /home/js/GumbelLPP/GumbelLPP/GumbelFunction.lean -o /home/js/GumbelLPP/.lake/build/lib/lean/GumbelLPP/GumbelFunction.olean -i /home/js/GumbelLPP/.lake/build/lib/lean/GumbelLPP/GumbelFunction.ilean -c /home/js/GumbelLPP/.lake/build/ir/GumbelLPP/GumbelFunction.c --setup /home/js/GumbelLPP/.lake/build/ir/GumbelLPP/GumbelFunction.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:39:297: Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.",
+   "level": "info"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:40:423: Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.",
+   "level": "info"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:45:223: Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.",
+   "level": "info"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:47:12: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:55:8: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:57:81: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:58:393: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:60:8: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:82:48: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:82:48: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:83:41: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:83:41: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:98:481: `differentiable_id'` has been deprecated: Use `differentiable_fun_id` instead",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:99:38: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:25:6: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.\n\nNote: This linter can be disabled with `set_option linter.style.refine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:33:12: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.\n\nNote: This linter can be disabled with `set_option linter.style.refine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:35:14: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.\n\nNote: This linter can be disabled with `set_option linter.style.refine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:48:12: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.\n\nNote: This linter can be disabled with `set_option linter.style.refine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:19:0: Please, add a comment explaining the need for modifying the maxHeartbeat limit, as in\nset_option maxHeartbeats 600000 in\n-- reason for change\n...\n\nNote: This linter can be disabled with `set_option linter.style.maxHeartbeats false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:34:12: The following tactic starts with 3 goals and ends with 2 goals, 2 of which are not operated on.\n  use fun x => (Real.exp (-Real.exp (-x) / N) * Real.exp (-x) / N) / (1 - Real.exp (-Real.exp (-x) / N))\nPlease focus on the current goal, for instance using `·` (typed as \"\\.\").\n\nNote: This linter can be disabled with `set_option linter.style.multiGoal false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:49:12: The following tactic starts with 3 goals and ends with 2 goals, 1 of which is not operated on.\n  convert\n    HasDerivAt.div\n      (HasDerivAt.mul (HasDerivAt.div_const (HasDerivAt.exp (hasDerivAt_neg x)) _)\n        (HasDerivAt.exp (HasDerivAt.div_const (HasDerivAt.neg (HasDerivAt.exp (hasDerivAt_neg x))) _)))\n      (HasDerivAt.sub (hasDerivAt_const _ _)\n        (HasDerivAt.exp (HasDerivAt.div_const (HasDerivAt.neg (HasDerivAt.exp (hasDerivAt_neg x))) _)))\n      _ using\n    1\nPlease focus on the current goal, for instance using `·` (typed as \"\\.\").\n\nNote: This linter can be disabled with `set_option linter.style.multiGoal false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:27:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:30:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:32:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:34:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:35:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:37:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:39:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:40:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:43:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:44:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:45:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:49:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:50:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:53:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:54:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:58:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:59:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:62:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:63:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:69:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:76:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:77:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:79:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:81:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:84:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:85:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:87:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:91:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:92:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:94:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:95:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:97:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:98:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:100:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:101:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:103:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/GumbelFunction.lean:104:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"}],
+ "inputs":
+ [["GumbelLPP.GumbelFunction:deps",
+   [["deps",
+     [["GumbelLPP/GumbelLPP:extraDep",
+       [["@GumbelLPP:extraDep", "00000000000006bb"]]],
+      ["imports",
+       [["GumbelLPP.Imports transitive imports (legacy)", "bdcf9aad6480f85c"],
+        ["GumbelLPP.Imports:importAllArts", "aed7eb25c843ebd3"]]]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.27.0, commit 2fcce7258eeb6e324366bc25f9058293b04b7547",
+   "6f43b597efea5d4c"],
+  ["/home/js/GumbelLPP/GumbelLPP/GumbelFunction.lean", "25f0a1c0815fd22c"],
+  ["options",
+   [["-DmaxSynthPendingDepth=3", "c78e353d34de85d4"],
+    ["-Dweak.linter.mathlibStandardSet=true", "8a155799906f2b42"],
+    ["-DrelaxedAutoImplicit=false", "74a2b5546b55be80"],
+    ["-Dpp.unicode.fun=true", "9b94070140457fab"]]],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "44412ea141ad96b8"}

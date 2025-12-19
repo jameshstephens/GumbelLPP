@@ -1,5 +1,5 @@
-import Imports
-import Coupling
+import GumbelLPP.Imports
+import GumbelLPP.Coupling
 
 /-!
 # Gumbel Distribution and Transformation to Exponential
@@ -95,14 +95,17 @@ lemma measure_singleton_eq_zero_of_continuous_cdf {Ω : Type*} [MeasurableSpace 
 The difference F(y) - F(y - 1/(n+1)) tends to 0 if F is continuous at y.
 -/
 lemma cdf_diff_tendsto_zero (F : ℝ → ℝ) (y : ℝ) (h_cont : ContinuousAt F y) :
-    Tendsto (fun n : ℕ => F y - F (y - 1 / (n + 1))) atTop (nhds 0) := by
-      simpa using h_cont.tendsto.comp ( show Filter.Tendsto ( fun n : ℕ => y - ( n + 1 : ℝ ) ⁻¹ ) Filter.atTop ( nhds y ) by simpa using tendsto_const_nhds.sub ( tendsto_one_div_add_atTop_nhds_zero_nat ) ) |> fun h => h.const_sub ( F y )
+    Filter.Tendsto (fun n : ℕ => F y - F (y - 1 / (n + 1))) Filter.atTop (nhds 0) := by
+      have : Filter.Tendsto (fun n : ℕ => y - (n + 1 : ℝ)⁻¹) Filter.atTop (nhds y) := by
+        simpa using Filter.Tendsto.sub tendsto_const_nhds
+          (tendsto_one_div_add_atTop_nhds_zero_nat (𝕜 := ℝ))
+      simpa using Filter.Tendsto.const_sub (F y) (h_cont.tendsto.comp this)
 
 /-
 The measure of a singleton for a Gumbel variable is 0.
 -/
-lemma gumbel_measure_singleton_zero {Ω : Type*} [MeasurableSpace Ω] (μ : Measure Ω) (Y : Ω → ℝ)
-    (h_meas : Measurable Y)
+lemma gumbel_measure_singleton_zero {Ω : Type*} [MeasurableSpace Ω]
+    (μ : Measure Ω) (Y : Ω → ℝ) (h_meas : Measurable Y)
     (hY : ∀ x, μ {ω | Y ω ≤ x} = ENNReal.ofReal (gumbel_cdf x)) (y : ℝ) :
     μ {ω | Y ω = y} = 0 := by
       -- Apply the lemma that states if a random variable has a continuous CDF at y, then the probability it equals y is 0.

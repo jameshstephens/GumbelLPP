@@ -1,0 +1,126 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["355e7240ed6b922a.olean"],
+  "i": "b653cd360fbbcc25.ilean",
+  "c": "17c36dae0918b751.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/js/GumbelLPP/.lake/packages/batteries/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/Qq/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/aesop/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/importGraph/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/plausible/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/MD4Lean/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/BibtexQuery/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/UnicodeBasic/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/Cli/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/mathlib/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/checkdecls/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/doc-gen4/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/build/lib/lean /home/js/.elan/toolchains/leanprover--lean4---v4.27.0-rc1/bin/lean /home/js/GumbelLPP/GumbelLPP/Slutsky.lean -o /home/js/GumbelLPP/.lake/build/lib/lean/GumbelLPP/Slutsky.olean -i /home/js/GumbelLPP/.lake/build/lib/lean/GumbelLPP/Slutsky.ilean -c /home/js/GumbelLPP/.lake/build/ir/GumbelLPP/Slutsky.c --setup /home/js/GumbelLPP/.lake/build/ir/GumbelLPP/Slutsky.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:20:34: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:19:6: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.\n\nNote: This linter can be disabled with `set_option linter.style.refine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:28:6: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.\n\nNote: This linter can be disabled with `set_option linter.style.refine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:29:6: The `refine'` tactic is discouraged: please strongly consider using `refine` or `apply` instead.\n\nNote: This linter can be disabled with `set_option linter.style.refine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:41:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:56:82: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:46:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:53:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:57:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:58:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:59:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:63:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:65:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:73:51: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:85:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:97:6: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:100:80: aesop: failed to prove the goal after exhaustive search.",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:105:10: Try this:\n  [apply] exact fun n ↦ slutsky_lower_bound (μ n) (X n) (Y n) r δ",
+   "level": "info"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:106:75: The following tactic starts with 3 goals and ends with 2 goals, 2 of which are not operated on.\n  aesop\nPlease focus on the current goal, for instance using `·` (typed as \"\\.\").\n\nNote: This linter can be disabled with `set_option linter.style.multiGoal false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:90:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:101:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:102:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:103:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:104:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:110:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:112:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:125:8: Try this:\n  [apply] exact fun ε a ↦ slutsky_cdf_upper μ X Y F h_cont h_X h_Y r ε a",
+   "level": "info"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:127:8: Try this:\n  [apply] exact fun ε a ↦ slutsky_cdf_lower μ X Y F h_cont h_X h_Y r ε a",
+   "level": "info"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:117:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"},
+  {"message":
+   "GumbelLPP/Slutsky.lean:130:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
+   "level": "warning"}],
+ "inputs":
+ [["GumbelLPP.Slutsky:deps",
+   [["deps",
+     [["GumbelLPP/GumbelLPP:extraDep",
+       [["@GumbelLPP:extraDep", "00000000000006bb"]]],
+      ["imports",
+       [["GumbelLPP.Imports transitive imports (legacy)", "bdcf9aad6480f85c"],
+        ["GumbelLPP.Imports:importAllArts", "aed7eb25c843ebd3"],
+        ["GumbelLPP.Convergence transitive imports (legacy)",
+         "58eec385ca942cbb"],
+        ["GumbelLPP.Convergence:importAllArts", "e85f1ac22c644dc0"]]]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.27.0, commit 2fcce7258eeb6e324366bc25f9058293b04b7547",
+   "6f43b597efea5d4c"],
+  ["/home/js/GumbelLPP/GumbelLPP/Slutsky.lean", "553f718c1f673db8"],
+  ["options",
+   [["-DmaxSynthPendingDepth=3", "c78e353d34de85d4"],
+    ["-Dweak.linter.mathlibStandardSet=true", "8a155799906f2b42"],
+    ["-DrelaxedAutoImplicit=false", "74a2b5546b55be80"],
+    ["-Dpp.unicode.fun=true", "9b94070140457fab"]]],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "8a3cb718eaef345b"}

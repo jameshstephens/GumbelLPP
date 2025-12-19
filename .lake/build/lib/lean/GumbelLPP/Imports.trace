@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["f5852a4b2d88daf9.olean"],
+  "i": "408d646f763b8a12.ilean",
+  "c": "b2c65642772ec4c9.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/js/GumbelLPP/.lake/packages/batteries/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/Qq/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/aesop/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/importGraph/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/plausible/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/MD4Lean/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/BibtexQuery/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/UnicodeBasic/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/Cli/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/mathlib/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/checkdecls/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/packages/doc-gen4/.lake/build/lib/lean:/home/js/GumbelLPP/.lake/build/lib/lean /home/js/.elan/toolchains/leanprover--lean4---v4.27.0-rc1/bin/lean /home/js/GumbelLPP/GumbelLPP/Imports.lean -o /home/js/GumbelLPP/.lake/build/lib/lean/GumbelLPP/Imports.olean -i /home/js/GumbelLPP/.lake/build/lib/lean/GumbelLPP/Imports.ilean -c /home/js/GumbelLPP/.lake/build/ir/GumbelLPP/Imports.c --setup /home/js/GumbelLPP/.lake/build/ir/GumbelLPP/Imports.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["GumbelLPP.Imports:deps",
+   [["deps",
+     [["GumbelLPP/GumbelLPP:extraDep",
+       [["@GumbelLPP:extraDep", "00000000000006bb"]]],
+      ["imports",
+       [["Mathlib transitive imports (legacy)", "a251df6c14bbe9bb"],
+        ["Mathlib:importAllArts", "c539eb52483cbb23"]]]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.27.0, commit 2fcce7258eeb6e324366bc25f9058293b04b7547",
+   "6f43b597efea5d4c"],
+  ["/home/js/GumbelLPP/GumbelLPP/Imports.lean", "c23b44d5fd0790c1"],
+  ["options",
+   [["-DmaxSynthPendingDepth=3", "c78e353d34de85d4"],
+    ["-Dweak.linter.mathlibStandardSet=true", "8a155799906f2b42"],
+    ["-DrelaxedAutoImplicit=false", "74a2b5546b55be80"],
+    ["-Dpp.unicode.fun=true", "9b94070140457fab"]]],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "3faa390ab8c56f2d"}
