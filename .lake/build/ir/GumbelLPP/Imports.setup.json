@@ -5,7 +5,7 @@
   "relaxedAutoImplicit": false,
   "pp.unicode.fun": true,
   "maxSynthPendingDepth": 3},
- "name": "GumbelLPP.Basic",
+ "name": "GumbelLPP.Imports",
  "isModule": false,
  "importArts":
  {"Qq.Typ":
