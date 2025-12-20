@@ -1,8 +1,8 @@
-import GumbelLPP.Imports
-import GumbelLPP.GumbelFunction
-import GumbelLPP.PerturbationBounds
-import GumbelLPP.GridPaths
-import GumbelLPP.Coupling
 import GumbelLPP.Convergence
-import GumbelLPP.Slutsky
+import GumbelLPP.Coupling
+import GumbelLPP.GridPaths
 import GumbelLPP.GumbelDistribution
+import GumbelLPP.GumbelFunction
+import GumbelLPP.Imports
+import GumbelLPP.PerturbationBounds
+import GumbelLPP.Slutsky
