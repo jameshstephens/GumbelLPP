@@ -458,29 +458,51 @@ The following properties capture known results from the literature that we assum
 
 \chapter{Main Theorem}
 
-\begin{theorem}[Approximate Gumbel Convergence]
+\begin{theorem}[Approximate Gumbel Convergence: Critical Threshold at $\alpha = 2/3$]
   \label{thm:main}
-  Assume the properties in Definitions \ref{def:exact_gumbel_convergence}, \ref{def:time_constant_gumbel}, and \ref{def:time_constant_exp}. Let $\alpha > 2/3$ and $N_n = \lfloor n^\alpha \rfloor$. For a sequence of Gumbel grids $Y^{(n)}$ and any $r \in \mathbb{R}$:
-  \[
-    \mathbb{P}\left(\frac{T_{\text{Approx}}^{N_n}(n) - C_g \cdot n}{\sigma_g \cdot n^{1/3}} \leq r\right) \to F_{\text{GUE}}(r)
-  \]
-  as $n \to \infty$.
+  Assume the properties in Definitions \ref{def:exact_gumbel_convergence}, \ref{def:time_constant_gumbel}, and \ref{def:time_constant_exp}. Let $N_n = \lfloor n^\alpha \rfloor$ for some $\alpha > 0$. For a sequence of Gumbel grids $Y^{(n)}$:
+
+  \begin{enumerate}
+    \item \textbf{(Convergence for $\alpha > 2/3$)} If $\alpha > 2/3$, then for any $r \in \mathbb{R}$:
+    \[
+      \mathbb{P}\left(\frac{T_{\text{Approx}}^{N_n}(n) - C_g \cdot n}{\sigma_g \cdot n^{1/3}} \leq r\right) \to F_{\text{GUE}}(r)
+    \]
+    as $n \to \infty$. That is, the approximate Gumbel LPP converges to the same GUE Tracy-Widom distribution as the exact Gumbel LPP.
+
+    \item \textbf{(Divergence for $\alpha < 2/3$)} If $\alpha < 2/3$, then the fluctuations diverge:
+    \[
+      \frac{T_{\text{Approx}}^{N_n}(n) - C_g \cdot n}{\sigma_g \cdot n^{1/3}} \xrightarrow{\mathbb{P}} +\infty
+    \]
+    as $n \to \infty$. More precisely, for any $M > 0$:
+    \[
+      \mathbb{P}\left(\frac{T_{\text{Approx}}^{N_n}(n) - C_g \cdot n}{\sigma_g \cdot n^{1/3}} > M\right) \to 1
+    \]
+  \end{enumerate}
+
+  Thus $\alpha = 2/3$ represents a sharp threshold: the approximation parameter $N$ must grow faster than $n^{2/3}$ for the limiting distribution to remain Tracy-Widom GUE.
 \end{theorem}
 
 \begin{proof}
-  \uses{thm:coupling_upper_bound, thm:coupling_lower_bound, thm:slutsky_cdf, lem:converges_in_prob_mul_zero, lem:deterministic_factor_limit}
+  \uses{thm:coupling_upper_bound, thm:coupling_lower_bound, thm:slutsky_cdf, lem:converges_in_prob_mul_zero, lem:deterministic_factor_limit, lem:h_properties}
 
   By Theorems \ref{thm:coupling_upper_bound} and \ref{thm:coupling_lower_bound}:
   \[
-    0 \leq T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n) \leq \frac{1}{N_n} L_{\text{Exp}}(n)
+    2n \cdot h_{N_n}\left(\frac{T_{\text{Gumbel}}(n)}{2n}\right) \leq T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n) \leq \frac{1}{N_n} L_{\text{Exp}}(n)
   \]
 
   Dividing by $\sigma_g n^{1/3}$:
   \[
-    \left|\frac{T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n)}{\sigma_g n^{1/3}}\right| \leq \frac{L_{\text{Exp}}(n)}{N_n \sigma_g n^{1/3}}
+    \frac{2n \cdot h_{N_n}(T_{\text{Gumbel}}(n)/(2n))}{\sigma_g n^{1/3}} \leq \frac{T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n)}{\sigma_g n^{1/3}} \leq \frac{L_{\text{Exp}}(n)}{N_n \sigma_g n^{1/3}}
   \]
 
-  By Definition \ref{def:time_constant_exp}, $L_{\text{Exp}}(n)/n \xrightarrow{\mathbb{P}} D_L$. By Lemma \ref{lem:deterministic_factor_limit}, $n/(N_n n^{1/3}) \to 0$. Therefore by Lemma \ref{lem:converges_in_prob_mul_zero}:
+  \textbf{Case 1: $\alpha > 2/3$.}
+
+  By Definition \ref{def:time_constant_exp}, $L_{\text{Exp}}(n)/n \xrightarrow{\mathbb{P}} D_L$. We have:
+  \[
+    \frac{L_{\text{Exp}}(n)}{N_n \sigma_g n^{1/3}} = \frac{L_{\text{Exp}}(n)}{n} \cdot \frac{n}{N_n \sigma_g n^{1/3}}
+  \]
+
+  By Lemma \ref{lem:deterministic_factor_limit}, $n/(N_n n^{1/3}) \to 0$ when $\alpha > 2/3$. Therefore by Lemma \ref{lem:converges_in_prob_mul_zero}:
   \[
     \frac{T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n)}{\sigma_g n^{1/3}} \xrightarrow{\mathbb{P}} 0
   \]
@@ -490,5 +512,26 @@ The following properties capture known results from the literature that we assum
     \frac{T_{\text{Gumbel}}(n) - C_g n}{\sigma_g n^{1/3}} \xrightarrow{d} F_{\text{GUE}}
   \]
 
-  Applying Slutsky's Theorem (Theorem \ref{thm:slutsky_cdf}) completes the proof.
+  Applying Slutsky's Theorem (Theorem \ref{thm:slutsky_cdf}) gives:
+  \[
+    \frac{T_{\text{Approx}}^{N_n}(n) - C_g n}{\sigma_g n^{1/3}} \xrightarrow{d} F_{\text{GUE}}
+  \]
+
+  \textbf{Case 2: $\alpha < 2/3$.}
+
+  By the lower bound from Theorem \ref{thm:coupling_lower_bound} and Lemma \ref{lem:h_properties}, for $x > 0$:
+  \[
+    h_{N_n}(x) \geq \frac{e^{-x}}{3N_n}
+  \]
+
+  By Definition \ref{def:time_constant_gumbel}, $T_{\text{Gumbel}}(n)/n \xrightarrow{\mathbb{P}} D_\ell$ where $D_\ell > 0$. Therefore $T_{\text{Gumbel}}(n)/(2n) \xrightarrow{\mathbb{P}} D_\ell/2 > 0$, which means for large $n$, $T_{\text{Gumbel}}(n)/(2n)$ is bounded away from zero with high probability. Thus:
+  \[
+    \frac{2n \cdot h_{N_n}(T_{\text{Gumbel}}(n)/(2n))}{\sigma_g n^{1/3}} \geq \frac{2n \cdot e^{-T_{\text{Gumbel}}(n)/(2n)}}{3N_n \sigma_g n^{1/3}} \geq \frac{C \cdot n}{N_n n^{1/3}} = C \cdot n^{2/3 - \alpha}
+  \]
+  for some constant $C > 0$ (with high probability). When $\alpha < 2/3$, the exponent $2/3 - \alpha > 0$, so this lower bound diverges to $+\infty$ as $n \to \infty$. Therefore:
+  \[
+    \frac{T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n)}{\sigma_g n^{1/3}} \xrightarrow{\mathbb{P}} +\infty
+  \]
+
+  Since the scaled $T_{\text{Gumbel}}(n)$ converges in distribution (hence is tight), the scaled $T_{\text{Approx}}^{N_n}(n)$ must diverge to $+\infty$ in probability.
 \end{proof}
