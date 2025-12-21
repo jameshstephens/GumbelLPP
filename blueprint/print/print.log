@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.12.17)  21 DEC 2025 09:21
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.12.17)  21 DEC 2025 10:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,19 +746,19 @@ Chapter 6.
 
 ] [10]
 Chapter 7.
-) [11
+[11
 
-] (/home/js/GumbelLPP/blueprint/print/print.aux)
+]) [12] (/home/js/GumbelLPP/blueprint/print/print.aux)
 Package rerunfilecheck Info: File `print.out' has not changed.
 (rerunfilecheck)             Checksum: 767208D8F4C46A6CE88F5ED4B648D363;3133.
  ) 
 Here is how much of TeX's memory you used:
- 16597 strings out of 478190
- 308594 string characters out of 5854826
- 804831 words of memory out of 5000000
- 36991 multiletter control sequences out of 15000+600000
- 474646 words of font info for 79 fonts, out of 8000000 for 9000
+ 16600 strings out of 478190
+ 308689 string characters out of 5854826
+ 807831 words of memory out of 5000000
+ 36992 multiletter control sequences out of 15000+600000
+ 474654 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,12n,115p,380b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,12n,115p,380b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /home/js/GumbelLPP/blueprint/print/print.pdf (12 pages).
+Output written on /home/js/GumbelLPP/blueprint/print/print.pdf (13 pages).

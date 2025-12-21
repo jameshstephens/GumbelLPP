@@ -119,6 +119,7 @@ The main result uses a coupling argument between exact and approximate Gumbel di
 \end{lemma}
 
 \begin{proof}
+  \leanok
   This follows from the continuity of the Gumbel CDF. For any continuous CDF $F$, the probability of a singleton is the difference $F(y) - F(y^-)$, which is zero when $F$ is continuous.
 \end{proof}
 
@@ -145,6 +146,7 @@ The main result uses a coupling argument between exact and approximate Gumbel di
 \end{lemma}
 
 \begin{proof}
+  \leanok
   \uses{lem:gumbel_prob_ge}
   For $x > 0$, we have:
   \begin{align*}
@@ -163,6 +165,11 @@ The main result uses a coupling argument between exact and approximate Gumbel di
   \uses{def:gumbel_grid, lem:gumbel_to_exp_cdf}
   If $Y$ is a Gumbel grid, then $E_e = \exp(-Y_e)$ forms a grid of independent exponential random variables with rate 1.
 \end{lemma}
+
+\begin{proof}
+  \leanok
+  The independence follows from the fact that $\exp$ is a measurable function and composition with independent random variables preserves independence. The CDF property follows from the previous lemma applied to each edge.
+\end{proof}
 
 \chapter{The Coupling Construction}
 
@@ -207,6 +214,7 @@ The main result uses a coupling argument between exact and approximate Gumbel di
 \end{lemma}
 
 \begin{proof}
+  \leanok
   The proof uses calculus to verify convexity by showing the second derivative is non-negative. The upper bound follows from Taylor expansion of the exponential and logarithm. The lower bound for $x > 0$ uses the inequality $1 - e^{-t} \geq t - \frac{t^2}{2} + \frac{t^3}{6}$ for $t \geq 0$.
 \end{proof}
 
@@ -222,6 +230,7 @@ The main result uses a coupling argument between exact and approximate Gumbel di
 \end{theorem}
 
 \begin{proof}
+  \leanok
   Direct calculation shows both sides equal $\exp(-e^{-y})$.
 \end{proof}
 
@@ -281,6 +290,7 @@ The main result uses a coupling argument between exact and approximate Gumbel di
 \end{lemma}
 
 \begin{proof}
+  \leanok
   The first inequality is immediate. For the second, note that $M_{A+B} \geq S_A(\pi^*) + S_B(\pi^*) = M_A + S_B(\pi^*)$. For the third, let $\pi'$ maximize $S_A + S_B$. Then:
   \[
     M_{A+B} - M_A = S_A(\pi') + S_B(\pi') - S_A(\pi^*) \leq S_B(\pi') \leq M_B
@@ -303,6 +313,7 @@ The main result uses a coupling argument between exact and approximate Gumbel di
 \end{theorem}
 
 \begin{proof}
+  \leanok
   \uses{lem:perturbation_bounds}
   Let $\pi^*$ be the maximizing path for $T_{\text{Gumbel}}$. By Lemma \ref{lem:h_properties}, for each edge $e$:
   \[
@@ -323,6 +334,7 @@ The main result uses a coupling argument between exact and approximate Gumbel di
 \end{theorem}
 
 \begin{proof}
+  \leanok
   Let $\pi^*$ be the geodesic for $T_{\text{Gumbel}}$, which has length $2n$. By Jensen's inequality applied to the convex function $h_N$:
   \[
     \frac{1}{2n} \sum_{e \in \pi^*} h_N(Y_e) \geq h_N\left(\frac{1}{2n} \sum_{e \in \pi^*} Y_e\right) = h_N\left(\frac{T_{\text{Gumbel}}(n)}{2n}\right)
@@ -420,6 +432,7 @@ The following properties capture known results from the literature that we assum
 \end{theorem}
 
 \begin{proof}
+  \leanok
   Fix $r \in \mathbb{R}$ and $\varepsilon > 0$. By Theorems \ref{thm:slutsky_upper_bound} and \ref{thm:slutsky_lower_bound}:
   \begin{align*}
     \mathbb{P}(X_n \leq r - \varepsilon) - \mathbb{P}(|Y_n| > \varepsilon) &\leq \mathbb{P}(X_n + Y_n \leq r) \\
@@ -449,6 +462,7 @@ The following properties capture known results from the literature that we assum
 \end{lemma}
 
 \begin{proof}
+  \leanok
   We have:
   \[
     \frac{n}{\lfloor n^\alpha \rfloor \cdot n^{1/3}} \leq \frac{2n}{n^\alpha \cdot n^{1/3}} = 2n^{2/3 - \alpha}
