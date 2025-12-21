@@ -1,6 +1,6 @@
 // Lean compiler output
 // Module: GumbelLPP
-// Imports: public import Init public import GumbelLPP.Imports public import GumbelLPP.GumbelFunction public import GumbelLPP.PerturbationBounds public import GumbelLPP.GridPaths public import GumbelLPP.Coupling public import GumbelLPP.Convergence public import GumbelLPP.Slutsky public import GumbelLPP.GumbelDistribution
+// Imports: public import Init public import GumbelLPP.Convergence public import GumbelLPP.Coupling public import GumbelLPP.GridPaths public import GumbelLPP.GumbelDistribution public import GumbelLPP.GumbelFunction public import GumbelLPP.Imports public import GumbelLPP.PerturbationBounds public import GumbelLPP.Slutsky
 #include <lean/lean.h>
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunused-parameter"
@@ -14,14 +14,14 @@
 extern "C" {
 #endif
 lean_object* initialize_Init(uint8_t builtin);
-lean_object* initialize_GumbelLPP_GumbelLPP_Imports(uint8_t builtin);
-lean_object* initialize_GumbelLPP_GumbelLPP_GumbelFunction(uint8_t builtin);
-lean_object* initialize_GumbelLPP_GumbelLPP_PerturbationBounds(uint8_t builtin);
-lean_object* initialize_GumbelLPP_GumbelLPP_GridPaths(uint8_t builtin);
-lean_object* initialize_GumbelLPP_GumbelLPP_Coupling(uint8_t builtin);
 lean_object* initialize_GumbelLPP_GumbelLPP_Convergence(uint8_t builtin);
-lean_object* initialize_GumbelLPP_GumbelLPP_Slutsky(uint8_t builtin);
+lean_object* initialize_GumbelLPP_GumbelLPP_Coupling(uint8_t builtin);
+lean_object* initialize_GumbelLPP_GumbelLPP_GridPaths(uint8_t builtin);
 lean_object* initialize_GumbelLPP_GumbelLPP_GumbelDistribution(uint8_t builtin);
+lean_object* initialize_GumbelLPP_GumbelLPP_GumbelFunction(uint8_t builtin);
+lean_object* initialize_GumbelLPP_GumbelLPP_Imports(uint8_t builtin);
+lean_object* initialize_GumbelLPP_GumbelLPP_PerturbationBounds(uint8_t builtin);
+lean_object* initialize_GumbelLPP_GumbelLPP_Slutsky(uint8_t builtin);
 static bool _G_initialized = false;
 LEAN_EXPORT lean_object* initialize_GumbelLPP_GumbelLPP(uint8_t builtin) {
 lean_object * res;
@@ -30,28 +30,28 @@ _G_initialized = true;
 res = initialize_Init(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_GumbelLPP_GumbelLPP_Imports(builtin);
-if (lean_io_result_is_error(res)) return res;
-lean_dec_ref(res);
-res = initialize_GumbelLPP_GumbelLPP_GumbelFunction(builtin);
-if (lean_io_result_is_error(res)) return res;
-lean_dec_ref(res);
-res = initialize_GumbelLPP_GumbelLPP_PerturbationBounds(builtin);
-if (lean_io_result_is_error(res)) return res;
-lean_dec_ref(res);
-res = initialize_GumbelLPP_GumbelLPP_GridPaths(builtin);
+res = initialize_GumbelLPP_GumbelLPP_Convergence(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 res = initialize_GumbelLPP_GumbelLPP_Coupling(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_GumbelLPP_GumbelLPP_Convergence(builtin);
-if (lean_io_result_is_error(res)) return res;
-lean_dec_ref(res);
-res = initialize_GumbelLPP_GumbelLPP_Slutsky(builtin);
+res = initialize_GumbelLPP_GumbelLPP_GridPaths(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 res = initialize_GumbelLPP_GumbelLPP_GumbelDistribution(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_GumbelLPP_GumbelLPP_GumbelFunction(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_GumbelLPP_GumbelLPP_Imports(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_GumbelLPP_GumbelLPP_PerturbationBounds(builtin);
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = initialize_GumbelLPP_GumbelLPP_Slutsky(builtin);
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
 return lean_io_result_mk_ok(lean_box(0));

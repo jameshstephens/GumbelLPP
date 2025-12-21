@@ -1,7 +1,7 @@
 {"plugins": [],
  "package": "GumbelLPP",
  "options":
- {"weak.linter.mathlibStandardSet": true,
+ {"weak.linter.mathlibStandardSet": false,
   "relaxedAutoImplicit": false,
   "pp.unicode.fun": true,
   "maxSynthPendingDepth": 3},

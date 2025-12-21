@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Perturbation Analysis</title>
+<link rel="next" href="sect0006.html" title="Convergence Properties" />
+<link rel="prev" href="sect0004.html" title="The Coupling Construction" />
+<link rel="up" href="index.html" title="Approximate Gumbel Last Passage Percolation" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Approximate Gumbel Last Passage Percolation</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Grid Paths and Last Passage Percolation</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html#a0000000009"><span class="toc_ref">2.1</span> <span class="toc_entry">Basic Definitions</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Gumbel and Exponential Distributions</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0003.html#a0000000010"><span class="toc_ref">3.1</span> <span class="toc_entry">The Gumbel Distribution</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000011"><span class="toc_ref">3.2</span> <span class="toc_entry">Transformation to Exponential Distribution</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">4</span> <span class="toc_entry">The Coupling Construction</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0004.html#a0000000012"><span class="toc_ref">4.1</span> <span class="toc_entry">Approximate Gumbel Distribution</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000013"><span class="toc_ref">4.2</span> <span class="toc_entry">The Coupling Function</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000014"><span class="toc_ref">4.3</span> <span class="toc_entry">LPP Definitions</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="sect0005.html"><span class="toc_ref">5</span> <span class="toc_entry">Perturbation Analysis</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0005.html#a0000000015"><span class="toc_ref">5.1</span> <span class="toc_entry">Coupling Bounds</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">6</span> <span class="toc_entry">Convergence Properties</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html#a0000000016"><span class="toc_ref">6.1</span> <span class="toc_entry">Convergence Definitions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000017"><span class="toc_ref">6.2</span> <span class="toc_entry">Known Results (Axiomatized)</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000018"><span class="toc_ref">6.3</span> <span class="toc_entry">Slutsky’s Theorem</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000019"><span class="toc_ref">6.4</span> <span class="toc_entry">Auxiliary Convergence Lemmas</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">7</span> <span class="toc_entry">Main Theorem</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000006">5 Perturbation Analysis</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:perturbation_bounds">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">22</span>
+    <span class="lemma_thmtitle">Perturbation Bounds</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#lem:perturbation_bounds">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000036"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/lemma_2" class="lean_decl">lemma_2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(\Pi \) be a finite nonempty set, and \(S_A, S_B : \Pi \to \mathbb {R}\) be functions. Suppose \(\pi ^*\) maximizes \(S_A\). Define: </p>
+<ul class="itemize">
+  <li><p>\(M_A = S_A(\pi ^*)\) </p>
+</li>
+  <li><p>\(M_{A+B} = \max _{\pi \in \Pi } (S_A(\pi ) + S_B(\pi ))\) </p>
+</li>
+  <li><p>\(m_B = \min _{\pi \in \Pi } S_B(\pi )\) </p>
+</li>
+  <li><p>\(M_B = \max _{\pi \in \Pi } S_B(\pi )\) </p>
+</li>
+</ul>
+<p> Then: </p>
+<div class="displaymath" id="a0000000037">
+  \[  m_B \leq S_B(\pi ^*) \leq M_{A+B} - M_A \leq M_B  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000036">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The first inequality is immediate. For the second, note that \(M_{A+B} \geq S_A(\pi ^*) + S_B(\pi ^*) = M_A + S_B(\pi ^*)\). For the third, let \(\pi '\) maximize \(S_A + S_B\). Then: </p>
+<div class="displaymath" id="a0000000038">
+  \[  M_{A+B} - M_A = S_A(\pi ') + S_B(\pi ') - S_A(\pi ^*) \leq S_B(\pi ') \leq M_B  \]
+</div>
+<p> where we used \(S_A(\pi ^*) \geq S_A(\pi ')\). </p>
+
+  </div>
+</div>
+<h1 id="a0000000015">5.1 Coupling Bounds</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:coupling_upper_bound">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">23</span>
+    <span class="theorem_thmtitle">Coupling Upper Bound</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm:coupling_upper_bound">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000039"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0004.html#def:T_gumbel">Definition 19</a></li>
+          
+          <li><a href="sect0004.html#def:T_approx">Definition 20</a></li>
+          
+          <li><a href="sect0004.html#def:L_exp">Definition 21</a></li>
+          
+          <li><a href="sect0004.html#lem:h_properties">Lemma 17</a></li>
+          
+          <li><a href="sect0005.html#lem:perturbation_bounds">Lemma 22</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/coupling_upper_bound" class="lean_decl">coupling_upper_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For \(N \geq 1\), a Gumbel grid \(Y\), and \(n \in \mathbb {N}\): </p>
+<div class="displaymath" id="a0000000040">
+  \[  T_{\text{Approx}}^N(n) - T_{\text{Gumbel}}(n) \leq \frac{1}{N} \cdot L_{\text{Exp}}(n)  \]
+</div>
+<p> where \(L_{\text{Exp}}(n)\) is computed with weights \(E_e = e^{-Y_e}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000039">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Let \(\pi ^*\) be the maximizing path for \(T_{\text{Gumbel}}\). By Lemma <a href="sect0004.html#lem:h_properties">17</a>, for each edge \(e\): </p>
+<div class="displaymath" id="a0000000041">
+  \[  h_N(Y_e) \leq \frac{e^{-Y_e}}{N}  \]
+</div>
+<p> Summing over the maximizing path for \(T_{\text{Approx}}^N\) and using Lemma <a href="sect0005.html#lem:perturbation_bounds">22</a> gives the result. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:coupling_lower_bound">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">24</span>
+    <span class="theorem_thmtitle">Coupling Lower Bound</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0005.html#thm:coupling_lower_bound">#</a>
+    
+    <a class="icon proof" href="sect0005.html#a0000000042"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0004.html#def:T_gumbel">Definition 19</a></li>
+          
+          <li><a href="sect0004.html#def:T_approx">Definition 20</a></li>
+          
+          <li><a href="sect0004.html#lem:h_properties">Lemma 17</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/coupling_lower_bound" class="lean_decl">coupling_lower_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For \(N \geq 1\), a Gumbel grid \(Y\), and \(n \in \mathbb {N}\): </p>
+<div class="displaymath" id="a0000000043">
+  \[  2n \cdot h_N\left(\frac{T_{\text{Gumbel}}(n)}{2n}\right) \leq T_{\text{Approx}}^N(n) - T_{\text{Gumbel}}(n)  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000042">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(\pi ^*\) be the geodesic for \(T_{\text{Gumbel}}\), which has length \(2n\). By Jensen’s inequality applied to the convex function \(h_N\): </p>
+<div class="displaymath" id="a0000000044">
+  \[  \frac{1}{2n} \sum _{e \in \pi ^*} h_N(Y_e) \geq h_N\left(\frac{1}{2n} \sum _{e \in \pi ^*} Y_e\right) = h_N\left(\frac{T_{\text{Gumbel}}(n)}{2n}\right)  \]
+</div>
+<p> The result follows since \(T_{\text{Approx}}^N(n) \geq \sum _{e \in \pi ^*} (Y_e + h_N(Y_e))\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0004.html" title="The Coupling Construction"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Approximate Gumbel Last Passage Percolation"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0006.html" title="Convergence Properties"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

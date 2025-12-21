@@ -1,0 +1,1278 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+<link rel="stylesheet" href="styles/extra_styles.css" />
+
+</head>
+
+<body>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+  <div id="Legend">
+    <span id="legend_title" class="title">Legend
+    <div class="btn">
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+    </div></span> 
+    <dl class="legend">
+      
+      <dt>Boxes</dt><dd>definitions</dd>
+      
+      <dt>Ellipses</dt><dd>theorems and lemmas</dd>
+      
+      <dt>Blue border</dt><dd>the <em>statement</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Orange border</dt><dd>the <em>statement</em> of this result is not ready to be formalized; the blueprint needs more work</dd>
+      
+      <dt>Blue background</dt><dd>the <em>proof</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Green border</dt><dd>the <em>statement</em> of this result is formalized</dd>
+      
+      <dt>Green background</dt><dd>the <em>proof</em> of this result is formalized</dd>
+      
+      <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
+      
+      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      
+    </dl>
+  </div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="def:approx_gumbel_cdf_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:approx_gumbel_cdf" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">15</span><span class="definition_thmtitle">Approximate Gumbel CDF</span></div>
+    <div class="thm_thmcontent"><p>   For \(N \geq 1\), the <em>\(N\)-approximate Gumbel CDF</em> is: </p>
+<div class="displaymath" id="a0000000028">
+  \[  F_N(x) = \begin{cases}  \left(1 - \frac{e^{-x}}{N}\right)^N &  \text{if } x {\gt} -\log N \\ 0 &  \text{otherwise} \end{cases}  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#def:approx_gumbel_cdf">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/f_approx_gumbel">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:converges_in_prob_const_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:converges_in_prob_const" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">26</span><span class="definition_thmtitle">Convergence in Probability to a Constant</span></div>
+    <div class="thm_thmcontent"><p>   A sequence of random variables \(\{ X_n\} \) <em>converges in probability to \(c\)</em> if: </p>
+<div class="displaymath" id="a0000000046">
+  \[  \forall \varepsilon {\gt} 0, \quad \mathbb {P}(|X_n - c| {\gt} \varepsilon ) \to 0 \text{ as } n \to \infty  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#def:converges_in_prob_const">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/ConvergesInProbConst">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:converges_in_prob_zero_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:converges_in_prob_zero" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">25</span><span class="definition_thmtitle">Convergence in Probability to Zero</span></div>
+    <div class="thm_thmcontent"><p>   A sequence of random variables \(\{ X_n\} \) <em>converges in probability to zero</em> if: </p>
+<div class="displaymath" id="a0000000045">
+  \[  \forall \varepsilon {\gt} 0, \quad \mathbb {P}(|X_n| {\gt} \varepsilon ) \to 0 \text{ as } n \to \infty  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#def:converges_in_prob_zero">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/ConvergesInProbZero">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:edge_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:edge" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2</span><span class="definition_thmtitle">Edge</span></div>
+    <div class="thm_thmcontent"><p>   An <em>edge</em> is a pair of grid points. </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def:edge">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/Edge">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:exact_gumbel_convergence_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:exact_gumbel_convergence" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">27</span><span class="definition_thmtitle">Exact Gumbel Convergence Property</span></div>
+    <div class="thm_thmcontent"><p>   For a Gumbel grid and appropriate constants \(C_g, \sigma _g {\gt} 0\): </p>
+<div class="displaymath" id="a0000000047">
+  \[  \frac{T_{\text{Gumbel}}(n) - C_g \cdot n}{\sigma _g \cdot n^{1/3}} \xrightarrow {d} F_{\text{GUE}}  \]
+</div>
+<p> where \(F_{\text{GUE}}\) is the GUE Tracy-Widom distribution. </p>
+</div>
+
+    <a class="latex_link" href="sect0006.html#def:exact_gumbel_convergence">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/ExactGumbelConvergenceProperty">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:grid_path_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:grid_path" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">4</span><span class="definition_thmtitle">Grid Path</span></div>
+    <div class="thm_thmcontent"><p>   A <em>grid path</em> is a list of edges. </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def:grid_path">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/GridPath">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:grid_point_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:grid_point" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1</span><span class="definition_thmtitle">Grid Point</span></div>
+    <div class="thm_thmcontent"><p>   A <em>grid point</em> is an element of \(\mathbb {N}^2\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def:grid_point">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/GridPoint">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:gumbel_cdf_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:gumbel_cdf" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">8</span><span class="definition_thmtitle">Gumbel CDF</span></div>
+    <div class="thm_thmcontent"><p>   The <em>Gumbel cumulative distribution function</em> is: </p>
+<div class="displaymath" id="a0000000021">
+  \[  F_{\text{Gumbel}}(x) = \exp (-e^{-x})  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#def:gumbel_cdf">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/gumbel_cdf">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:gumbel_grid_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:gumbel_grid" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">10</span><span class="definition_thmtitle">Gumbel Grid</span></div>
+    <div class="thm_thmcontent"><p>    A random field \(Y : \text{Edge} \to \Omega \to \mathbb {R}\) is a <em>Gumbel grid</em> if: </p>
+<ol class="enumerate">
+  <li><p>The random variables \(\{ Y_e\} _{e \in \text{Edge}}\) are independent, and </p>
+</li>
+  <li><p>For each edge \(e\) and \(x \in \mathbb {R}\), \(\mathbb {P}(Y_e \leq x) = F_{\text{Gumbel}}(x)\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0003.html#def:gumbel_grid">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/IsGumbelGrid">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:h_function_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:h_function" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">16</span><span class="definition_thmtitle">Coupling Function \(h_N\)</span></div>
+    <div class="thm_thmcontent"><p>   For \(N \geq 1\), define: </p>
+<div class="displaymath" id="a0000000029">
+  \[  h_N(x) = -\log \left(N \cdot \left(1 - e^{-e^{-x}/N}\right)\right) - x  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#def:h_function">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/h">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:L_exp_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:L_exp" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">21</span><span class="definition_thmtitle">Exponential LPP</span></div>
+    <div class="thm_thmcontent"><p>    For a grid \(E\) of exponential random variables: </p>
+<div class="displaymath" id="a0000000035">
+  \[  L_{\text{Exp}}(n) = \text{LPP}_E(n, n)  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#def:L_exp">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/L_Exp">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:lpp_value_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:lpp_value" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">7</span><span class="definition_thmtitle">LPP Value</span></div>
+    <div class="thm_thmcontent"><p>    Given a weight function \(w : \text{Edge} \to \mathbb {R}\) and endpoints \((m, n)\), the <em>Last Passage Percolation value</em> is: </p>
+<div class="displaymath" id="a0000000020">
+  \[  \text{LPP}_w(m, n) = \max _{\pi \in \text{Paths}(0, 0; m, n)} \sum _{e \in \pi } w(e)  \]
+</div>
+<p> where the maximum is taken over all valid paths from \((0, 0)\) to \((m, n)\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def:lpp_value">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/LPP_value">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:T_approx_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:T_approx" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">20</span><span class="definition_thmtitle">Approximate Gumbel LPP</span></div>
+    <div class="thm_thmcontent"><p>    For a Gumbel grid \(Y\) and \(N \geq 1\), define: </p>
+<div class="displaymath" id="a0000000034">
+  \[  T_{\text{Approx}}^N(n) = \text{LPP}_{Y + h_N(Y)}(n, n)  \]
+</div>
+<p> where the weights are \(w_e = Y_e + h_N(Y_e)\) for each edge \(e\). </p>
+</div>
+
+    <a class="latex_link" href="sect0004.html#def:T_approx">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/T_Approx">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:T_gumbel_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:T_gumbel" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">19</span><span class="definition_thmtitle">Gumbel LPP</span></div>
+    <div class="thm_thmcontent"><p>    For a Gumbel grid \(Y\), define: </p>
+<div class="displaymath" id="a0000000033">
+  \[  T_{\text{Gumbel}}(n) = \text{LPP}_Y(n, n)  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#def:T_gumbel">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/T_Gumbel">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:time_constant_exp_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:time_constant_exp" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">29</span><span class="definition_thmtitle">Time Constant for Exponential LPP</span></div>
+    <div class="thm_thmcontent"><p>   There exists a constant \(D_L {\gt} 0\) such that: </p>
+<div class="displaymath" id="a0000000049">
+  \[  \frac{L_{\text{Exp}}(n)}{n} \xrightarrow {\mathbb {P}} D_L  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#def:time_constant_exp">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/TimeConstantExpProperty">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:time_constant_gumbel_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:time_constant_gumbel" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">28</span><span class="definition_thmtitle">Time Constant for Gumbel LPP</span></div>
+    <div class="thm_thmcontent"><p>   There exists a constant \(D_\ell {\gt} 0\) such that: </p>
+<div class="displaymath" id="a0000000048">
+  \[  \frac{T_{\text{Gumbel}}(n)}{n} \xrightarrow {\mathbb {P}} D_\ell  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#def:time_constant_gumbel">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/TimeConstantGumbelProperty">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:up_right_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:up_right" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">3</span><span class="definition_thmtitle">Up-Right Edge</span></div>
+    <div class="thm_thmcontent"><p>   An edge \((p, q)\) where \(p = (x, y)\) and \(q = (x', y')\) is <em>up-right</em> if either: </p>
+<ul class="itemize">
+  <li><p>\(x' = x + 1\) and \(y' = y\) (right step), or </p>
+</li>
+  <li><p>\(x' = x\) and \(y' = y + 1\) (up step). </p>
+</li>
+</ul>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def:up_right">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/is_up_right">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="def:valid_path_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="def:valid_path" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">5</span><span class="definition_thmtitle">Valid Path</span></div>
+    <div class="thm_thmcontent"><p>    A path is <em>valid</em> from point \(p\) to point \(q\) if it is a sequence of connected up-right edges starting at \(p\) and ending at \(q\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#def:valid_path">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/IsValidPath">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:converges_in_prob_mul_zero_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:converges_in_prob_mul_zero" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">33</span><span class="lemma_thmtitle">Product Convergence</span></div>
+    <div class="thm_thmcontent"><p>    If \(Y_n \xrightarrow {\mathbb {P}} c\) and \(a_n \to 0\), then \(a_n \cdot Y_n \xrightarrow {\mathbb {P}} 0\). </p>
+</div>
+
+    <a class="latex_link" href="sect0006.html#lem:converges_in_prob_mul_zero">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/converges_in_prob_mul_zero">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:deterministic_factor_limit_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:deterministic_factor_limit" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">34</span><span class="lemma_thmtitle">Deterministic Factor Limit</span></div>
+    <div class="thm_thmcontent"><p>   For \(\alpha {\gt} 2/3\): </p>
+<div class="displaymath" id="a0000000056">
+  \[  \frac{n}{\lfloor n^\alpha \rfloor \cdot n^{1/3}} \to 0 \text{ as } n \to \infty  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#lem:deterministic_factor_limit">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/deterministic_factor_limit">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:exp_neg_Y_is_exp_grid_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:exp_neg_Y_is_exp_grid" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">14</span><span class="lemma_thmtitle">Exponential Grid from Gumbel</span></div>
+    <div class="thm_thmcontent"><p>    If \(Y\) is a Gumbel grid, then \(E_e = \exp (-Y_e)\) forms a grid of independent exponential random variables with rate 1. </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lem:exp_neg_Y_is_exp_grid">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/exp_neg_Y_is_exp_grid">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:gumbel_cdf_continuous_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:gumbel_cdf_continuous" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">9</span><span class="lemma_thmtitle">Gumbel CDF is Continuous</span></div>
+    <div class="thm_thmcontent"><p>    The Gumbel CDF is continuous on \(\mathbb {R}\). </p>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lem:gumbel_cdf_continuous">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/gumbel_cdf_continuous">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:gumbel_measure_singleton_zero_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:gumbel_measure_singleton_zero" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">11</span><span class="lemma_thmtitle">Gumbel Measure of Singletons is Zero</span></div>
+    <div class="thm_thmcontent"><p>    If \(Y\) is a Gumbel random variable, then for any \(y \in \mathbb {R}\): </p>
+<div class="displaymath" id="a0000000023">
+  \[  \mathbb {P}(Y = y) = 0  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lem:gumbel_measure_singleton_zero">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/gumbel_measure_singleton_zero">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:gumbel_prob_ge_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:gumbel_prob_ge" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">12</span><span class="lemma_thmtitle">Gumbel Probability of Complement</span></div>
+    <div class="thm_thmcontent"><p>    If \(Y\) is a Gumbel random variable, then: </p>
+<div class="displaymath" id="a0000000024">
+  \[  \mathbb {P}(Y \geq y) = 1 - F_{\text{Gumbel}}(y)  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lem:gumbel_prob_ge">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/gumbel_prob_ge">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:gumbel_to_exp_cdf_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:gumbel_to_exp_cdf" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">13</span><span class="lemma_thmtitle">Gumbel to Exponential Transformation</span></div>
+    <div class="thm_thmcontent"><p>    If \(Y\) is a Gumbel random variable, then \(\exp (-Y)\) has the exponential distribution with rate 1. Specifically, for \(x \geq 0\): </p>
+<div class="displaymath" id="a0000000026">
+  \[  \mathbb {P}(\exp (-Y) \leq x) = 1 - e^{-x}  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0003.html#lem:gumbel_to_exp_cdf">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/gumbel_to_exp_cdf">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:h_properties_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:h_properties" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">17</span><span class="lemma_thmtitle">Convexity and Bounds for \(h_N\)</span></div>
+    <div class="thm_thmcontent"><p>    For \(N \geq 1\), the function \(h_N : \mathbb {R} \to \mathbb {R}\) satisfies: </p>
+<ol class="enumerate">
+  <li><p>\(h_N\) is convex on \(\mathbb {R}\), </p>
+</li>
+  <li><p>\(0 {\lt} h_N(x) \leq \frac{e^{-x}}{N}\) for all \(x \in \mathbb {R}\), </p>
+</li>
+  <li><p>\(\frac{e^{-x}}{3N} \leq h_N(x)\) for all \(x {\gt} 0\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sect0004.html#lem:h_properties">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/lemma_1">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:paths_nonempty_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:paths_nonempty" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">6</span><span class="lemma_thmtitle">Paths Exist</span></div>
+    <div class="thm_thmcontent"><p>    For any \(m, n \in \mathbb {N}\), there exists at least one valid path from \((0, 0)\) to \((m, n)\). </p>
+</div>
+
+    <a class="latex_link" href="sect0002.html#lem:paths_nonempty">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/paths_nonempty">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:perturbation_bounds_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:perturbation_bounds" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">22</span><span class="lemma_thmtitle">Perturbation Bounds</span></div>
+    <div class="thm_thmcontent"><p>   Let \(\Pi \) be a finite nonempty set, and \(S_A, S_B : \Pi \to \mathbb {R}\) be functions. Suppose \(\pi ^*\) maximizes \(S_A\). Define: </p>
+<ul class="itemize">
+  <li><p>\(M_A = S_A(\pi ^*)\) </p>
+</li>
+  <li><p>\(M_{A+B} = \max _{\pi \in \Pi } (S_A(\pi ) + S_B(\pi ))\) </p>
+</li>
+  <li><p>\(m_B = \min _{\pi \in \Pi } S_B(\pi )\) </p>
+</li>
+  <li><p>\(M_B = \max _{\pi \in \Pi } S_B(\pi )\) </p>
+</li>
+</ul>
+<p> Then: </p>
+<div class="displaymath" id="a0000000037">
+  \[  m_B \leq S_B(\pi ^*) \leq M_{A+B} - M_A \leq M_B  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#lem:perturbation_bounds">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/lemma_2">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:coupling_identity_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:coupling_identity" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">18</span><span class="theorem_thmtitle">Coupling Identity</span></div>
+    <div class="thm_thmcontent"><p>    For \(N \geq 1\) and \(y \in \mathbb {R}\): </p>
+<div class="displaymath" id="a0000000032">
+  \[  F_{\text{Gumbel}}(y) = F_N(h_N(y) + y)  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0004.html#thm:coupling_identity">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/coupling_identity">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:coupling_lower_bound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:coupling_lower_bound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">24</span><span class="theorem_thmtitle">Coupling Lower Bound</span></div>
+    <div class="thm_thmcontent"><p>    For \(N \geq 1\), a Gumbel grid \(Y\), and \(n \in \mathbb {N}\): </p>
+<div class="displaymath" id="a0000000043">
+  \[  2n \cdot h_N\left(\frac{T_{\text{Gumbel}}(n)}{2n}\right) \leq T_{\text{Approx}}^N(n) - T_{\text{Gumbel}}(n)  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0005.html#thm:coupling_lower_bound">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/coupling_lower_bound">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:coupling_upper_bound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:coupling_upper_bound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">23</span><span class="theorem_thmtitle">Coupling Upper Bound</span></div>
+    <div class="thm_thmcontent"><p>    For \(N \geq 1\), a Gumbel grid \(Y\), and \(n \in \mathbb {N}\): </p>
+<div class="displaymath" id="a0000000040">
+  \[  T_{\text{Approx}}^N(n) - T_{\text{Gumbel}}(n) \leq \frac{1}{N} \cdot L_{\text{Exp}}(n)  \]
+</div>
+<p> where \(L_{\text{Exp}}(n)\) is computed with weights \(E_e = e^{-Y_e}\). </p>
+</div>
+
+    <a class="latex_link" href="sect0005.html#thm:coupling_upper_bound">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/coupling_upper_bound">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:main_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:main" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">35</span><span class="theorem_thmtitle">Approximate Gumbel Convergence</span></div>
+    <div class="thm_thmcontent"><p>  Assume the properties in Definitions <a href="sect0006.html#def:exact_gumbel_convergence">27</a>, <a href="sect0006.html#def:time_constant_gumbel">28</a>, and <a href="sect0006.html#def:time_constant_exp">29</a>. Let \(\alpha {\gt} 2/3\) and \(N_n = \lfloor n^\alpha \rfloor \). For a sequence of Gumbel grids \(Y^{(n)}\) and any \(r \in \mathbb {R}\): </p>
+<div class="displaymath" id="a0000000059">
+  \[  \mathbb {P}\left(\frac{T_{\text{Approx}}^{N_n}(n) - C_g \cdot n}{\sigma _g \cdot n^{1/3}} \leq r\right) \to F_{\text{GUE}}(r)  \]
+</div>
+<p> as \(n \to \infty \). </p>
+</div>
+
+    <a class="latex_link" href="sect0007.html#thm:main">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:slutsky_cdf_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:slutsky_cdf" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">32</span><span class="theorem_thmtitle">Slutsky’s Theorem for CDFs</span></div>
+    <div class="thm_thmcontent"><p>    Suppose \(X_n \xrightarrow {d} F\) (convergence in distribution to a continuous CDF \(F\)) and \(Y_n \xrightarrow {\mathbb {P}} 0\). Then: </p>
+<div class="displaymath" id="a0000000053">
+  \[  X_n + Y_n \xrightarrow {d} F  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#thm:slutsky_cdf">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/slutsky_cdf">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:slutsky_lower_bound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:slutsky_lower_bound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">31</span><span class="theorem_thmtitle">Slutsky Lower Bound</span></div>
+    <div class="thm_thmcontent"><p>   For random variables \(X, Y\) and constants \(r, \varepsilon \): </p>
+<div class="displaymath" id="a0000000051">
+  \[  \mathbb {P}(X \leq r - \varepsilon ) \leq \mathbb {P}(X + Y \leq r) + \mathbb {P}(|Y| {\gt} \varepsilon )  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#thm:slutsky_lower_bound">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/slutsky_lower_bound">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:slutsky_upper_bound_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:slutsky_upper_bound" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">30</span><span class="theorem_thmtitle">Slutsky Upper Bound</span></div>
+    <div class="thm_thmcontent"><p>   For random variables \(X, Y\) and constants \(r, \varepsilon \): </p>
+<div class="displaymath" id="a0000000050">
+  \[  \mathbb {P}(X + Y \leq r) \leq \mathbb {P}(X \leq r + \varepsilon ) + \mathbb {P}(|Y| {\gt} \varepsilon )  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0006.html#thm:slutsky_upper_bound">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/slutsky_upper_bound">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:L_exp"	[color=green,		fillcolor="#B0ECA3",		label=L_exp,		shape=box,		style=filled];	"thm:coupling_upper_bound"	[color=green,		fillcolor="#A3D6FF",		label=coupling_upper_bound,		shape=ellipse,		style=filled];	"def:L_exp" -> "thm:coupling_upper_bound"	[style=dashed];	"thm:main"	[color=blue,		fillcolor="#A3D6FF",		label=main,		shape=ellipse,		style=filled];	"thm:coupling_upper_bound" -> "thm:main";	"def:converges_in_prob_const"	[color=green,		fillcolor="#B0ECA3",		label=converges_in_prob_const,		shape=box,		style=filled];	"lem:converges_in_prob_mul_zero"	[color=green,		label=converges_in_prob_mul_zero,		shape=ellipse];	"def:converges_in_prob_const" -> "lem:converges_in_prob_mul_zero"	[style=dashed];	"lem:converges_in_prob_mul_zero" -> "thm:main";	"def:exact_gumbel_convergence"	[color=blue,		fillcolor="#A3D6FF",		label=exact_gumbel_convergence,		shape=box,		style=filled];	"def:time_constant_gumbel"	[color=blue,		fillcolor="#A3D6FF",		label=time_constant_gumbel,		shape=box,		style=filled];	"def:time_constant_exp"	[color=blue,		fillcolor="#A3D6FF",		label=time_constant_exp,		shape=box,		style=filled];	"lem:gumbel_prob_ge"	[color=green,		label=gumbel_prob_ge,		shape=ellipse];	"lem:gumbel_to_exp_cdf"	[color=green,		fillcolor="#A3D6FF",		label=gumbel_to_exp_cdf,		shape=ellipse,		style=filled];	"lem:gumbel_prob_ge" -> "lem:gumbel_to_exp_cdf"	[style=dashed];	"lem:exp_neg_Y_is_exp_grid"	[color=green,		label=exp_neg_Y_is_exp_grid,		shape=ellipse];	"lem:gumbel_to_exp_cdf" -> "lem:exp_neg_Y_is_exp_grid"	[style=dashed];	"thm:coupling_lower_bound"	[color=green,		fillcolor="#A3D6FF",		label=coupling_lower_bound,		shape=ellipse,		style=filled];	"thm:coupling_lower_bound" -> "thm:main";	"def:grid_point"	[color=green,		fillcolor="#B0ECA3",		label=grid_point,		shape=box,		style=filled];	"def:valid_path"	[color=green,		fillcolor="#B0ECA3",		label=valid_path,		shape=box,		style=filled];	"def:lpp_value"	[color=green,		fillcolor="#B0ECA3",		label=lpp_value,		shape=box,		style=filled];	"def:valid_path" -> "def:lpp_value"	[style=dashed];	"lem:paths_nonempty"	[color=green,		label=paths_nonempty,		shape=ellipse];	"def:valid_path" -> "lem:paths_nonempty"	[style=dashed];	"def:lpp_value" -> "def:L_exp"	[style=dashed];	"def:T_approx"	[color=green,		fillcolor="#B0ECA3",		label=T_approx,		shape=box,		style=filled];	"def:lpp_value" -> "def:T_approx"	[style=dashed];	"def:T_gumbel"	[color=green,		fillcolor="#B0ECA3",		label=T_gumbel,		shape=box,		style=filled];	"def:lpp_value" -> "def:T_gumbel"	[style=dashed];	"def:T_approx" -> "thm:coupling_upper_bound"	[style=dashed];	"def:T_approx" -> "thm:coupling_lower_bound"	[style=dashed];	"def:T_gumbel" -> "thm:coupling_upper_bound"	[style=dashed];	"def:T_gumbel" -> "thm:coupling_lower_bound"	[style=dashed];	"lem:gumbel_cdf_continuous"	[color=green,		label=gumbel_cdf_continuous,		shape=ellipse];	"lem:gumbel_measure_singleton_zero"	[color=green,		fillcolor="#A3D6FF",		label=gumbel_measure_singleton_zero,		shape=ellipse,		style=filled];	"lem:gumbel_cdf_continuous" -> "lem:gumbel_measure_singleton_zero"	[style=dashed];	"lem:gumbel_measure_singleton_zero" -> "lem:gumbel_prob_ge"	[style=dashed];	"lem:h_properties"	[color=green,		fillcolor="#A3D6FF",		label=h_properties,		shape=ellipse,		style=filled];	"lem:h_properties" -> "thm:coupling_upper_bound"	[style=dashed];	"lem:h_properties" -> "thm:coupling_lower_bound"	[style=dashed];	"lem:deterministic_factor_limit"	[color=green,		fillcolor="#A3D6FF",		label=deterministic_factor_limit,		shape=ellipse,		style=filled];	"lem:deterministic_factor_limit" -> "thm:main";	"thm:slutsky_cdf"	[color=green,		fillcolor="#A3D6FF",		label=slutsky_cdf,		shape=ellipse,		style=filled];	"thm:slutsky_cdf" -> "thm:main";	"def:gumbel_cdf"	[color=green,		fillcolor="#B0ECA3",		label=gumbel_cdf,		shape=box,		style=filled];	"def:gumbel_cdf" -> "lem:gumbel_cdf_continuous"	[style=dashed];	"def:gumbel_grid"	[color=green,		fillcolor="#B0ECA3",		label=gumbel_grid,		shape=box,		style=filled];	"def:gumbel_cdf" -> "def:gumbel_grid"	[style=dashed];	"thm:coupling_identity"	[color=green,		fillcolor="#A3D6FF",		label=coupling_identity,		shape=ellipse,		style=filled];	"def:gumbel_cdf" -> "thm:coupling_identity"	[style=dashed];	"def:gumbel_grid" -> "lem:exp_neg_Y_is_exp_grid"	[style=dashed];	"def:gumbel_grid" -> "def:T_gumbel"	[style=dashed];	"def:approx_gumbel_cdf"	[color=green,		fillcolor="#B0ECA3",		label=approx_gumbel_cdf,		shape=box,		style=filled];	"def:approx_gumbel_cdf" -> "thm:coupling_identity"	[style=dashed];	"def:h_function"	[color=green,		fillcolor="#B0ECA3",		label=h_function,		shape=box,		style=filled];	"def:h_function" -> "def:T_approx"	[style=dashed];	"def:h_function" -> "lem:h_properties"	[style=dashed];	"def:h_function" -> "thm:coupling_identity"	[style=dashed];	"def:grid_path"	[color=green,		fillcolor="#B0ECA3",		label=grid_path,		shape=box,		style=filled];	"lem:perturbation_bounds"	[color=green,		fillcolor="#A3D6FF",		label=perturbation_bounds,		shape=ellipse,		style=filled];	"lem:perturbation_bounds" -> "thm:coupling_upper_bound";	"thm:slutsky_lower_bound"	[color=green,		label=slutsky_lower_bound,		shape=ellipse];	"thm:slutsky_lower_bound" -> "thm:slutsky_cdf"	[style=dashed];	"def:edge"	[color=green,		fillcolor="#B0ECA3",		label="edge",		shape=box,		style=filled];	"def:up_right"	[color=green,		fillcolor="#B0ECA3",		label=up_right,		shape=box,		style=filled];	"def:up_right" -> "def:valid_path"	[style=dashed];	"def:converges_in_prob_zero"	[color=green,		fillcolor="#B0ECA3",		label=converges_in_prob_zero,		shape=box,		style=filled];	"def:converges_in_prob_zero" -> "lem:converges_in_prob_mul_zero"	[style=dashed];	"def:converges_in_prob_zero" -> "thm:slutsky_cdf"	[style=dashed];	"thm:slutsky_upper_bound"	[color=green,		label=slutsky_upper_bound,		shape=ellipse];	"thm:slutsky_upper_bound" -> "thm:slutsky_cdf"	[style=dashed];}`)
+    .on("end", interactive);
+
+latexLabelEscaper = function(label) {
+  return label.replace(/\./g, '\\.').replace(/:/g, '\\:')
+}
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+  $('.thm').hide();
+  $('#'+latexLabelEscaper(node_id)).show().children().show();
+}
+function interactive() {
+    $("span#legend_title").on("click", function () {
+           $(this).siblings('dl').toggle();
+        })
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+latexLabelEscaper(title)+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>

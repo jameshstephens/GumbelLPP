@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Coupling Construction</title>
+<link rel="next" href="sect0005.html" title="Perturbation Analysis" />
+<link rel="prev" href="sect0003.html" title="Gumbel and Exponential Distributions" />
+<link rel="up" href="index.html" title="Approximate Gumbel Last Passage Percolation" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Approximate Gumbel Last Passage Percolation</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Grid Paths and Last Passage Percolation</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html#a0000000009"><span class="toc_ref">2.1</span> <span class="toc_entry">Basic Definitions</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Gumbel and Exponential Distributions</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0003.html#a0000000010"><span class="toc_ref">3.1</span> <span class="toc_entry">The Gumbel Distribution</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000011"><span class="toc_ref">3.2</span> <span class="toc_entry">Transformation to Exponential Distribution</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="sect0004.html"><span class="toc_ref">4</span> <span class="toc_entry">The Coupling Construction</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0004.html#a0000000012"><span class="toc_ref">4.1</span> <span class="toc_entry">Approximate Gumbel Distribution</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000013"><span class="toc_ref">4.2</span> <span class="toc_entry">The Coupling Function</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000014"><span class="toc_ref">4.3</span> <span class="toc_entry">LPP Definitions</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">5</span> <span class="toc_entry">Perturbation Analysis</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0005.html#a0000000015"><span class="toc_ref">5.1</span> <span class="toc_entry">Coupling Bounds</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0006.html"><span class="toc_ref">6</span> <span class="toc_entry">Convergence Properties</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0006.html#a0000000016"><span class="toc_ref">6.1</span> <span class="toc_entry">Convergence Definitions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000017"><span class="toc_ref">6.2</span> <span class="toc_entry">Known Results (Axiomatized)</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000018"><span class="toc_ref">6.3</span> <span class="toc_entry">Slutsky’s Theorem</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000019"><span class="toc_ref">6.4</span> <span class="toc_entry">Auxiliary Convergence Lemmas</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">7</span> <span class="toc_entry">Main Theorem</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000005">4 The Coupling Construction</h1>
+<h1 id="a0000000012">4.1 Approximate Gumbel Distribution</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:approx_gumbel_cdf">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">15</span>
+    <span class="definition_thmtitle">Approximate Gumbel CDF</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#def:approx_gumbel_cdf">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/f_approx_gumbel" class="lean_decl">f_approx_gumbel</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   For \(N \geq 1\), the <em>\(N\)-approximate Gumbel CDF</em> is: </p>
+<div class="displaymath" id="a0000000028">
+  \[  F_N(x) = \begin{cases}  \left(1 - \frac{e^{-x}}{N}\right)^N &  \text{if } x {\gt} -\log N \\ 0 &  \text{otherwise} \end{cases}  \]
+</div>
+
+  </div>
+</div>
+<h1 id="a0000000013">4.2 The Coupling Function</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:h_function">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">16</span>
+    <span class="definition_thmtitle">Coupling Function \(h_N\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#def:h_function">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/h" class="lean_decl">h</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   For \(N \geq 1\), define: </p>
+<div class="displaymath" id="a0000000029">
+  \[  h_N(x) = -\log \left(N \cdot \left(1 - e^{-e^{-x}/N}\right)\right) - x  \]
+</div>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:h_properties">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">17</span>
+    <span class="lemma_thmtitle">Convexity and Bounds for \(h_N\)</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#lem:h_properties">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0004.html#def:h_function">Definition 16</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/lemma_1" class="lean_decl">lemma_1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>    For \(N \geq 1\), the function \(h_N : \mathbb {R} \to \mathbb {R}\) satisfies: </p>
+<ol class="enumerate">
+  <li><p>\(h_N\) is convex on \(\mathbb {R}\), </p>
+</li>
+  <li><p>\(0 {\lt} h_N(x) \leq \frac{e^{-x}}{N}\) for all \(x \in \mathbb {R}\), </p>
+</li>
+  <li><p>\(\frac{e^{-x}}{3N} \leq h_N(x)\) for all \(x {\gt} 0\). </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000030">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The proof uses calculus to verify convexity by showing the second derivative is non-negative. The upper bound follows from Taylor expansion of the exponential and logarithm. The lower bound for \(x {\gt} 0\) uses the inequality \(1 - e^{-t} \geq t - \frac{t^2}{2} + \frac{t^3}{6}\) for \(t \geq 0\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:coupling_identity">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">18</span>
+    <span class="theorem_thmtitle">Coupling Identity</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#thm:coupling_identity">#</a>
+    
+    <a class="icon proof" href="sect0004.html#a0000000031"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0003.html#def:gumbel_cdf">Definition 8</a></li>
+          
+          <li><a href="sect0004.html#def:approx_gumbel_cdf">Definition 15</a></li>
+          
+          <li><a href="sect0004.html#def:h_function">Definition 16</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/coupling_identity" class="lean_decl">coupling_identity</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    For \(N \geq 1\) and \(y \in \mathbb {R}\): </p>
+<div class="displaymath" id="a0000000032">
+  \[  F_{\text{Gumbel}}(y) = F_N(h_N(y) + y)  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000031">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Direct calculation shows both sides equal \(\exp (-e^{-y})\). </p>
+
+  </div>
+</div>
+<h1 id="a0000000014">4.3 LPP Definitions</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:T_gumbel">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">19</span>
+    <span class="definition_thmtitle">Gumbel LPP</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#def:T_gumbel">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#def:lpp_value">Definition 7</a></li>
+          
+          <li><a href="sect0003.html#def:gumbel_grid">Definition 10</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/T_Gumbel" class="lean_decl">T_Gumbel</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    For a Gumbel grid \(Y\), define: </p>
+<div class="displaymath" id="a0000000033">
+  \[  T_{\text{Gumbel}}(n) = \text{LPP}_Y(n, n)  \]
+</div>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:T_approx">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">20</span>
+    <span class="definition_thmtitle">Approximate Gumbel LPP</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#def:T_approx">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#def:lpp_value">Definition 7</a></li>
+          
+          <li><a href="sect0004.html#def:h_function">Definition 16</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/T_Approx" class="lean_decl">T_Approx</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    For a Gumbel grid \(Y\) and \(N \geq 1\), define: </p>
+<div class="displaymath" id="a0000000034">
+  \[  T_{\text{Approx}}^N(n) = \text{LPP}_{Y + h_N(Y)}(n, n)  \]
+</div>
+<p> where the weights are \(w_e = Y_e + h_N(Y_e)\) for each edge \(e\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:L_exp">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">21</span>
+    <span class="definition_thmtitle">Exponential LPP</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0004.html#def:L_exp">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0002.html#def:lpp_value">Definition 7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/L_Exp" class="lean_decl">L_Exp</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>    For a grid \(E\) of exponential random variables: </p>
+<div class="displaymath" id="a0000000035">
+  \[  L_{\text{Exp}}(n) = \text{LPP}_E(n, n)  \]
+</div>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0003.html" title="Gumbel and Exponential Distributions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Approximate Gumbel Last Passage Percolation"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0005.html" title="Perturbation Analysis"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

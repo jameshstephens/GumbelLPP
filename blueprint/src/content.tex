@@ -1,9 +1,494 @@
-% In this file you should put the actual content of the blueprint.
-% It will be used both by the web and the print version.
-% It should *not* include the \begin{document}
-%
-% If you want to split the blueprint content into several files then
-% the current file can be a simple sequence of \input. Otherwise It
-% can start with a \section or \chapter for instance.
+% Content for Approximate Gumbel Last Passage Percolation
+% This file contains the mathematical content of the blueprint
 
-Hello, world.
+\chapter{Introduction}
+
+This project formalizes the convergence properties of Last Passage Percolation (LPP) models with approximate Gumbel distributions. We establish that LPP with $N$-approximate Gumbel weights converges to the same GUE Tracy-Widom distribution as exact Gumbel LPP, provided that $N$ grows appropriately with the grid size.
+
+The main result uses a coupling argument between exact and approximate Gumbel distributions, combined with perturbation bounds to control the difference between the two models.
+
+\chapter{Grid Paths and Last Passage Percolation}
+
+\section{Basic Definitions}
+
+\begin{definition}[Grid Point]
+  \label{def:grid_point}
+  \lean{GridPoint}
+  \leanok
+  A \emph{grid point} is an element of $\mathbb{N}^2$.
+\end{definition}
+
+\begin{definition}[Edge]
+  \label{def:edge}
+  \lean{Edge}
+  \leanok
+  An \emph{edge} is a pair of grid points.
+\end{definition}
+
+\begin{definition}[Up-Right Edge]
+  \label{def:up_right}
+  \lean{is_up_right}
+  \leanok
+  An edge $(p, q)$ where $p = (x, y)$ and $q = (x', y')$ is \emph{up-right} if either:
+  \begin{itemize}
+    \item $x' = x + 1$ and $y' = y$ (right step), or
+    \item $x' = x$ and $y' = y + 1$ (up step).
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Grid Path]
+  \label{def:grid_path}
+  \lean{GridPath}
+  \leanok
+  A \emph{grid path} is a list of edges.
+\end{definition}
+
+\begin{definition}[Valid Path]
+  \label{def:valid_path}
+  \lean{IsValidPath}
+  \leanok
+  \uses{def:up_right}
+  A path is \emph{valid} from point $p$ to point $q$ if it is a sequence of connected up-right edges starting at $p$ and ending at $q$.
+\end{definition}
+
+\begin{lemma}[Paths Exist]
+  \label{lem:paths_nonempty}
+  \lean{paths_nonempty}
+  \leanok
+  \uses{def:valid_path}
+  For any $m, n \in \mathbb{N}$, there exists at least one valid path from $(0, 0)$ to $(m, n)$.
+\end{lemma}
+
+\begin{definition}[LPP Value]
+  \label{def:lpp_value}
+  \lean{LPP_value}
+  \leanok
+  \uses{def:valid_path}
+  Given a weight function $w : \text{Edge} \to \mathbb{R}$ and endpoints $(m, n)$, the \emph{Last Passage Percolation value} is:
+  \[
+    \text{LPP}_w(m, n) = \max_{\pi \in \text{Paths}(0, 0; m, n)} \sum_{e \in \pi} w(e)
+  \]
+  where the maximum is taken over all valid paths from $(0, 0)$ to $(m, n)$.
+\end{definition}
+
+\chapter{Gumbel and Exponential Distributions}
+
+\section{The Gumbel Distribution}
+
+\begin{definition}[Gumbel CDF]
+  \label{def:gumbel_cdf}
+  \lean{gumbel_cdf}
+  \leanok
+  The \emph{Gumbel cumulative distribution function} is:
+  \[
+    F_{\text{Gumbel}}(x) = \exp(-e^{-x})
+  \]
+\end{definition}
+
+\begin{lemma}[Gumbel CDF is Continuous]
+  \label{lem:gumbel_cdf_continuous}
+  \lean{gumbel_cdf_continuous}
+  \leanok
+  \uses{def:gumbel_cdf}
+  The Gumbel CDF is continuous on $\mathbb{R}$.
+\end{lemma}
+
+\begin{definition}[Gumbel Grid]
+  \label{def:gumbel_grid}
+  \lean{IsGumbelGrid}
+  \leanok
+  \uses{def:gumbel_cdf}
+  A random field $Y : \text{Edge} \to \Omega \to \mathbb{R}$ is a \emph{Gumbel grid} if:
+  \begin{enumerate}
+    \item The random variables $\{Y_e\}_{e \in \text{Edge}}$ are independent, and
+    \item For each edge $e$ and $x \in \mathbb{R}$, $\mathbb{P}(Y_e \leq x) = F_{\text{Gumbel}}(x)$.
+  \end{enumerate}
+\end{definition}
+
+\section{Transformation to Exponential Distribution}
+
+\begin{lemma}[Gumbel Measure of Singletons is Zero]
+  \label{lem:gumbel_measure_singleton_zero}
+  \lean{gumbel_measure_singleton_zero}
+  \leanok
+  \uses{def:gumbel_cdf, lem:gumbel_cdf_continuous}
+  If $Y$ is a Gumbel random variable, then for any $y \in \mathbb{R}$:
+  \[
+    \mathbb{P}(Y = y) = 0
+  \]
+\end{lemma}
+
+\begin{proof}
+  This follows from the continuity of the Gumbel CDF. For any continuous CDF $F$, the probability of a singleton is the difference $F(y) - F(y^-)$, which is zero when $F$ is continuous.
+\end{proof}
+
+\begin{lemma}[Gumbel Probability of Complement]
+  \label{lem:gumbel_prob_ge}
+  \lean{gumbel_prob_ge}
+  \leanok
+  \uses{def:gumbel_cdf, lem:gumbel_measure_singleton_zero}
+  If $Y$ is a Gumbel random variable, then:
+  \[
+    \mathbb{P}(Y \geq y) = 1 - F_{\text{Gumbel}}(y)
+  \]
+\end{lemma}
+
+\begin{lemma}[Gumbel to Exponential Transformation]
+  \label{lem:gumbel_to_exp_cdf}
+  \lean{gumbel_to_exp_cdf}
+  \leanok
+  \uses{def:gumbel_cdf, lem:gumbel_prob_ge}
+  If $Y$ is a Gumbel random variable, then $\exp(-Y)$ has the exponential distribution with rate 1. Specifically, for $x \geq 0$:
+  \[
+    \mathbb{P}(\exp(-Y) \leq x) = 1 - e^{-x}
+  \]
+\end{lemma}
+
+\begin{proof}
+  \uses{lem:gumbel_prob_ge}
+  For $x > 0$, we have:
+  \begin{align*}
+    \mathbb{P}(\exp(-Y) \leq x) &= \mathbb{P}(-Y \leq \log x) \\
+    &= \mathbb{P}(Y \geq -\log x) \\
+    &= 1 - F_{\text{Gumbel}}(-\log x) \\
+    &= 1 - \exp(-\exp(\log x)) \\
+    &= 1 - e^{-x}
+  \end{align*}
+\end{proof}
+
+\begin{lemma}[Exponential Grid from Gumbel]
+  \label{lem:exp_neg_Y_is_exp_grid}
+  \lean{exp_neg_Y_is_exp_grid}
+  \leanok
+  \uses{def:gumbel_grid, lem:gumbel_to_exp_cdf}
+  If $Y$ is a Gumbel grid, then $E_e = \exp(-Y_e)$ forms a grid of independent exponential random variables with rate 1.
+\end{lemma}
+
+\chapter{The Coupling Construction}
+
+\section{Approximate Gumbel Distribution}
+
+\begin{definition}[Approximate Gumbel CDF]
+  \label{def:approx_gumbel_cdf}
+  \lean{f_approx_gumbel}
+  \leanok
+  For $N \geq 1$, the \emph{$N$-approximate Gumbel CDF} is:
+  \[
+    F_N(x) = \begin{cases}
+      \left(1 - \frac{e^{-x}}{N}\right)^N & \text{if } x > -\log N \\
+      0 & \text{otherwise}
+    \end{cases}
+  \]
+\end{definition}
+
+\section{The Coupling Function}
+
+\begin{definition}[Coupling Function $h_N$]
+  \label{def:h_function}
+  \lean{h}
+  \leanok
+  For $N \geq 1$, define:
+  \[
+    h_N(x) = -\log\left(N \cdot \left(1 - e^{-e^{-x}/N}\right)\right) - x
+  \]
+\end{definition}
+
+\begin{lemma}[Convexity and Bounds for $h_N$]
+  \label{lem:h_properties}
+  \lean{lemma_1}
+  \leanok
+  \uses{def:h_function}
+  For $N \geq 1$, the function $h_N : \mathbb{R} \to \mathbb{R}$ satisfies:
+  \begin{enumerate}
+    \item $h_N$ is convex on $\mathbb{R}$,
+    \item $0 < h_N(x) \leq \frac{e^{-x}}{N}$ for all $x \in \mathbb{R}$,
+    \item $\frac{e^{-x}}{3N} \leq h_N(x)$ for all $x > 0$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  The proof uses calculus to verify convexity by showing the second derivative is non-negative. The upper bound follows from Taylor expansion of the exponential and logarithm. The lower bound for $x > 0$ uses the inequality $1 - e^{-t} \geq t - \frac{t^2}{2} + \frac{t^3}{6}$ for $t \geq 0$.
+\end{proof}
+
+\begin{theorem}[Coupling Identity]
+  \label{thm:coupling_identity}
+  \lean{coupling_identity}
+  \leanok
+  \uses{def:gumbel_cdf, def:approx_gumbel_cdf, def:h_function}
+  For $N \geq 1$ and $y \in \mathbb{R}$:
+  \[
+    F_{\text{Gumbel}}(y) = F_N(h_N(y) + y)
+  \]
+\end{theorem}
+
+\begin{proof}
+  Direct calculation shows both sides equal $\exp(-e^{-y})$.
+\end{proof}
+
+\section{LPP Definitions}
+
+\begin{definition}[Gumbel LPP]
+  \label{def:T_gumbel}
+  \lean{T_Gumbel}
+  \leanok
+  \uses{def:lpp_value, def:gumbel_grid}
+  For a Gumbel grid $Y$, define:
+  \[
+    T_{\text{Gumbel}}(n) = \text{LPP}_Y(n, n)
+  \]
+\end{definition}
+
+\begin{definition}[Approximate Gumbel LPP]
+  \label{def:T_approx}
+  \lean{T_Approx}
+  \leanok
+  \uses{def:lpp_value, def:h_function}
+  For a Gumbel grid $Y$ and $N \geq 1$, define:
+  \[
+    T_{\text{Approx}}^N(n) = \text{LPP}_{Y + h_N(Y)}(n, n)
+  \]
+  where the weights are $w_e = Y_e + h_N(Y_e)$ for each edge $e$.
+\end{definition}
+
+\begin{definition}[Exponential LPP]
+  \label{def:L_exp}
+  \lean{L_Exp}
+  \leanok
+  \uses{def:lpp_value}
+  For a grid $E$ of exponential random variables:
+  \[
+    L_{\text{Exp}}(n) = \text{LPP}_E(n, n)
+  \]
+\end{definition}
+
+\chapter{Perturbation Analysis}
+
+\begin{lemma}[Perturbation Bounds]
+  \label{lem:perturbation_bounds}
+  \lean{lemma_2}
+  \leanok
+  Let $\Pi$ be a finite nonempty set, and $S_A, S_B : \Pi \to \mathbb{R}$ be functions. Suppose $\pi^*$ maximizes $S_A$. Define:
+  \begin{itemize}
+    \item $M_A = S_A(\pi^*)$
+    \item $M_{A+B} = \max_{\pi \in \Pi} (S_A(\pi) + S_B(\pi))$
+    \item $m_B = \min_{\pi \in \Pi} S_B(\pi)$
+    \item $M_B = \max_{\pi \in \Pi} S_B(\pi)$
+  \end{itemize}
+  Then:
+  \[
+    m_B \leq S_B(\pi^*) \leq M_{A+B} - M_A \leq M_B
+  \]
+\end{lemma}
+
+\begin{proof}
+  The first inequality is immediate. For the second, note that $M_{A+B} \geq S_A(\pi^*) + S_B(\pi^*) = M_A + S_B(\pi^*)$. For the third, let $\pi'$ maximize $S_A + S_B$. Then:
+  \[
+    M_{A+B} - M_A = S_A(\pi') + S_B(\pi') - S_A(\pi^*) \leq S_B(\pi') \leq M_B
+  \]
+  where we used $S_A(\pi^*) \geq S_A(\pi')$.
+\end{proof}
+
+\section{Coupling Bounds}
+
+\begin{theorem}[Coupling Upper Bound]
+  \label{thm:coupling_upper_bound}
+  \lean{coupling_upper_bound}
+  \leanok
+  \uses{def:T_gumbel, def:T_approx, def:L_exp, lem:h_properties}
+  For $N \geq 1$, a Gumbel grid $Y$, and $n \in \mathbb{N}$:
+  \[
+    T_{\text{Approx}}^N(n) - T_{\text{Gumbel}}(n) \leq \frac{1}{N} \cdot L_{\text{Exp}}(n)
+  \]
+  where $L_{\text{Exp}}(n)$ is computed with weights $E_e = e^{-Y_e}$.
+\end{theorem}
+
+\begin{proof}
+  \uses{lem:perturbation_bounds}
+  Let $\pi^*$ be the maximizing path for $T_{\text{Gumbel}}$. By Lemma \ref{lem:h_properties}, for each edge $e$:
+  \[
+    h_N(Y_e) \leq \frac{e^{-Y_e}}{N}
+  \]
+  Summing over the maximizing path for $T_{\text{Approx}}^N$ and using Lemma \ref{lem:perturbation_bounds} gives the result.
+\end{proof}
+
+\begin{theorem}[Coupling Lower Bound]
+  \label{thm:coupling_lower_bound}
+  \lean{coupling_lower_bound}
+  \leanok
+  \uses{def:T_gumbel, def:T_approx, lem:h_properties}
+  For $N \geq 1$, a Gumbel grid $Y$, and $n \in \mathbb{N}$:
+  \[
+    2n \cdot h_N\left(\frac{T_{\text{Gumbel}}(n)}{2n}\right) \leq T_{\text{Approx}}^N(n) - T_{\text{Gumbel}}(n)
+  \]
+\end{theorem}
+
+\begin{proof}
+  Let $\pi^*$ be the geodesic for $T_{\text{Gumbel}}$, which has length $2n$. By Jensen's inequality applied to the convex function $h_N$:
+  \[
+    \frac{1}{2n} \sum_{e \in \pi^*} h_N(Y_e) \geq h_N\left(\frac{1}{2n} \sum_{e \in \pi^*} Y_e\right) = h_N\left(\frac{T_{\text{Gumbel}}(n)}{2n}\right)
+  \]
+  The result follows since $T_{\text{Approx}}^N(n) \geq \sum_{e \in \pi^*} (Y_e + h_N(Y_e))$.
+\end{proof}
+
+\chapter{Convergence Properties}
+
+\section{Convergence Definitions}
+
+\begin{definition}[Convergence in Probability to Zero]
+  \label{def:converges_in_prob_zero}
+  \lean{ConvergesInProbZero}
+  \leanok
+  A sequence of random variables $\{X_n\}$ \emph{converges in probability to zero} if:
+  \[
+    \forall \varepsilon > 0, \quad \mathbb{P}(|X_n| > \varepsilon) \to 0 \text{ as } n \to \infty
+  \]
+\end{definition}
+
+\begin{definition}[Convergence in Probability to a Constant]
+  \label{def:converges_in_prob_const}
+  \lean{ConvergesInProbConst}
+  \leanok
+  A sequence of random variables $\{X_n\}$ \emph{converges in probability to $c$} if:
+  \[
+    \forall \varepsilon > 0, \quad \mathbb{P}(|X_n - c| > \varepsilon) \to 0 \text{ as } n \to \infty
+  \]
+\end{definition}
+
+\section{Known Results (Axiomatized)}
+
+The following properties capture known results from the literature that we assume as axioms:
+
+\begin{definition}[Exact Gumbel Convergence Property]
+  \label{def:exact_gumbel_convergence}
+  \lean{ExactGumbelConvergenceProperty}
+  For a Gumbel grid and appropriate constants $C_g, \sigma_g > 0$:
+  \[
+    \frac{T_{\text{Gumbel}}(n) - C_g \cdot n}{\sigma_g \cdot n^{1/3}} \xrightarrow{d} F_{\text{GUE}}
+  \]
+  where $F_{\text{GUE}}$ is the GUE Tracy-Widom distribution.
+\end{definition}
+
+\begin{definition}[Time Constant for Gumbel LPP]
+  \label{def:time_constant_gumbel}
+  \lean{TimeConstantGumbelProperty}
+  There exists a constant $D_\ell > 0$ such that:
+  \[
+    \frac{T_{\text{Gumbel}}(n)}{n} \xrightarrow{\mathbb{P}} D_\ell
+  \]
+\end{definition}
+
+\begin{definition}[Time Constant for Exponential LPP]
+  \label{def:time_constant_exp}
+  \lean{TimeConstantExpProperty}
+  There exists a constant $D_L > 0$ such that:
+  \[
+    \frac{L_{\text{Exp}}(n)}{n} \xrightarrow{\mathbb{P}} D_L
+  \]
+\end{definition}
+
+\section{Slutsky's Theorem}
+
+\begin{theorem}[Slutsky Upper Bound]
+  \label{thm:slutsky_upper_bound}
+  \lean{slutsky_upper_bound}
+  \leanok
+  For random variables $X, Y$ and constants $r, \varepsilon$:
+  \[
+    \mathbb{P}(X + Y \leq r) \leq \mathbb{P}(X \leq r + \varepsilon) + \mathbb{P}(|Y| > \varepsilon)
+  \]
+\end{theorem}
+
+\begin{theorem}[Slutsky Lower Bound]
+  \label{thm:slutsky_lower_bound}
+  \lean{slutsky_lower_bound}
+  \leanok
+  For random variables $X, Y$ and constants $r, \varepsilon$:
+  \[
+    \mathbb{P}(X \leq r - \varepsilon) \leq \mathbb{P}(X + Y \leq r) + \mathbb{P}(|Y| > \varepsilon)
+  \]
+\end{theorem}
+
+\begin{theorem}[Slutsky's Theorem for CDFs]
+  \label{thm:slutsky_cdf}
+  \lean{slutsky_cdf}
+  \leanok
+  \uses{def:converges_in_prob_zero, thm:slutsky_upper_bound, thm:slutsky_lower_bound}
+  Suppose $X_n \xrightarrow{d} F$ (convergence in distribution to a continuous CDF $F$) and $Y_n \xrightarrow{\mathbb{P}} 0$. Then:
+  \[
+    X_n + Y_n \xrightarrow{d} F
+  \]
+\end{theorem}
+
+\begin{proof}
+  Fix $r \in \mathbb{R}$ and $\varepsilon > 0$. By Theorems \ref{thm:slutsky_upper_bound} and \ref{thm:slutsky_lower_bound}:
+  \begin{align*}
+    \mathbb{P}(X_n \leq r - \varepsilon) - \mathbb{P}(|Y_n| > \varepsilon) &\leq \mathbb{P}(X_n + Y_n \leq r) \\
+    &\leq \mathbb{P}(X_n \leq r + \varepsilon) + \mathbb{P}(|Y_n| > \varepsilon)
+  \end{align*}
+  Taking limits and using continuity of $F$ gives the result.
+\end{proof}
+
+\section{Auxiliary Convergence Lemmas}
+
+\begin{lemma}[Product Convergence]
+  \label{lem:converges_in_prob_mul_zero}
+  \lean{converges_in_prob_mul_zero}
+  \leanok
+  \uses{def:converges_in_prob_zero, def:converges_in_prob_const}
+  If $Y_n \xrightarrow{\mathbb{P}} c$ and $a_n \to 0$, then $a_n \cdot Y_n \xrightarrow{\mathbb{P}} 0$.
+\end{lemma}
+
+\begin{lemma}[Deterministic Factor Limit]
+  \label{lem:deterministic_factor_limit}
+  \lean{deterministic_factor_limit}
+  \leanok
+  For $\alpha > 2/3$:
+  \[
+    \frac{n}{\lfloor n^\alpha \rfloor \cdot n^{1/3}} \to 0 \text{ as } n \to \infty
+  \]
+\end{lemma}
+
+\begin{proof}
+  We have:
+  \[
+    \frac{n}{\lfloor n^\alpha \rfloor \cdot n^{1/3}} \leq \frac{2n}{n^\alpha \cdot n^{1/3}} = 2n^{2/3 - \alpha}
+  \]
+  Since $\alpha > 2/3$, the exponent is negative and the limit is zero.
+\end{proof}
+
+\chapter{Main Theorem}
+
+\begin{theorem}[Approximate Gumbel Convergence]
+  \label{thm:main}
+  Assume the properties in Definitions \ref{def:exact_gumbel_convergence}, \ref{def:time_constant_gumbel}, and \ref{def:time_constant_exp}. Let $\alpha > 2/3$ and $N_n = \lfloor n^\alpha \rfloor$. For a sequence of Gumbel grids $Y^{(n)}$ and any $r \in \mathbb{R}$:
+  \[
+    \mathbb{P}\left(\frac{T_{\text{Approx}}^{N_n}(n) - C_g \cdot n}{\sigma_g \cdot n^{1/3}} \leq r\right) \to F_{\text{GUE}}(r)
+  \]
+  as $n \to \infty$.
+\end{theorem}
+
+\begin{proof}
+  \uses{thm:coupling_upper_bound, thm:coupling_lower_bound, thm:slutsky_cdf, lem:converges_in_prob_mul_zero, lem:deterministic_factor_limit}
+
+  By Theorems \ref{thm:coupling_upper_bound} and \ref{thm:coupling_lower_bound}:
+  \[
+    0 \leq T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n) \leq \frac{1}{N_n} L_{\text{Exp}}(n)
+  \]
+
+  Dividing by $\sigma_g n^{1/3}$:
+  \[
+    \left|\frac{T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n)}{\sigma_g n^{1/3}}\right| \leq \frac{L_{\text{Exp}}(n)}{N_n \sigma_g n^{1/3}}
+  \]
+
+  By Definition \ref{def:time_constant_exp}, $L_{\text{Exp}}(n)/n \xrightarrow{\mathbb{P}} D_L$. By Lemma \ref{lem:deterministic_factor_limit}, $n/(N_n n^{1/3}) \to 0$. Therefore by Lemma \ref{lem:converges_in_prob_mul_zero}:
+  \[
+    \frac{T_{\text{Approx}}^{N_n}(n) - T_{\text{Gumbel}}(n)}{\sigma_g n^{1/3}} \xrightarrow{\mathbb{P}} 0
+  \]
+
+  By Definition \ref{def:exact_gumbel_convergence}:
+  \[
+    \frac{T_{\text{Gumbel}}(n) - C_g n}{\sigma_g n^{1/3}} \xrightarrow{d} F_{\text{GUE}}
+  \]
+
+  Applying Slutsky's Theorem (Theorem \ref{thm:slutsky_cdf}) completes the proof.
+\end{proof}

@@ -26,8 +26,8 @@
   ["/home/js/GumbelLPP/GumbelLPP/Imports.lean", "c23b44d5fd0790c1"],
   ["options",
    [["-DmaxSynthPendingDepth=3", "c78e353d34de85d4"],
-    ["-Dweak.linter.mathlibStandardSet=true", "8a155799906f2b42"],
+    ["-Dweak.linter.mathlibStandardSet=false", "28605bbdbbe35f32"],
     ["-DrelaxedAutoImplicit=false", "74a2b5546b55be80"],
     ["-Dpp.unicode.fun=true", "9b94070140457fab"]]],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "3faa390ab8c56f2d"}
+ "depHash": "80ef7c251fc786a7"}

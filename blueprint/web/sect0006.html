@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Convergence Properties</title>
+<link rel="next" href="sect0007.html" title="Main Theorem" />
+<link rel="prev" href="sect0005.html" title="Perturbation Analysis" />
+<link rel="up" href="index.html" title="Approximate Gumbel Last Passage Percolation" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Approximate Gumbel Last Passage Percolation</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Introduction</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">2</span> <span class="toc_entry">Grid Paths and Last Passage Percolation</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0002.html#a0000000009"><span class="toc_ref">2.1</span> <span class="toc_entry">Basic Definitions</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">3</span> <span class="toc_entry">Gumbel and Exponential Distributions</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0003.html#a0000000010"><span class="toc_ref">3.1</span> <span class="toc_entry">The Gumbel Distribution</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html#a0000000011"><span class="toc_ref">3.2</span> <span class="toc_entry">Transformation to Exponential Distribution</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0004.html"><span class="toc_ref">4</span> <span class="toc_entry">The Coupling Construction</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0004.html#a0000000012"><span class="toc_ref">4.1</span> <span class="toc_entry">Approximate Gumbel Distribution</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000013"><span class="toc_ref">4.2</span> <span class="toc_entry">The Coupling Function</span></a>
+ </li>
+<li class="">
+  <a href="sect0004.html#a0000000014"><span class="toc_ref">4.3</span> <span class="toc_entry">LPP Definitions</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0005.html"><span class="toc_ref">5</span> <span class="toc_entry">Perturbation Analysis</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0005.html#a0000000015"><span class="toc_ref">5.1</span> <span class="toc_entry">Coupling Bounds</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="sect0006.html"><span class="toc_ref">6</span> <span class="toc_entry">Convergence Properties</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0006.html#a0000000016"><span class="toc_ref">6.1</span> <span class="toc_entry">Convergence Definitions</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000017"><span class="toc_ref">6.2</span> <span class="toc_entry">Known Results (Axiomatized)</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000018"><span class="toc_ref">6.3</span> <span class="toc_entry">Slutsky’s Theorem</span></a>
+ </li>
+<li class="">
+  <a href="sect0006.html#a0000000019"><span class="toc_ref">6.4</span> <span class="toc_entry">Auxiliary Convergence Lemmas</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0007.html"><span class="toc_ref">7</span> <span class="toc_entry">Main Theorem</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000007">6 Convergence Properties</h1>
+<h1 id="a0000000016">6.1 Convergence Definitions</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="def:converges_in_prob_zero">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">25</span>
+    <span class="definition_thmtitle">Convergence in Probability to Zero</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#def:converges_in_prob_zero">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/ConvergesInProbZero" class="lean_decl">ConvergesInProbZero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A sequence of random variables \(\{ X_n\} \) <em>converges in probability to zero</em> if: </p>
+<div class="displaymath" id="a0000000045">
+  \[  \forall \varepsilon {\gt} 0, \quad \mathbb {P}(|X_n| {\gt} \varepsilon ) \to 0 \text{ as } n \to \infty  \]
+</div>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:converges_in_prob_const">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">26</span>
+    <span class="definition_thmtitle">Convergence in Probability to a Constant</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#def:converges_in_prob_const">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/ConvergesInProbConst" class="lean_decl">ConvergesInProbConst</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A sequence of random variables \(\{ X_n\} \) <em>converges in probability to \(c\)</em> if: </p>
+<div class="displaymath" id="a0000000046">
+  \[  \forall \varepsilon {\gt} 0, \quad \mathbb {P}(|X_n - c| {\gt} \varepsilon ) \to 0 \text{ as } n \to \infty  \]
+</div>
+
+  </div>
+</div>
+<h1 id="a0000000017">6.2 Known Results (Axiomatized)</h1>
+<p>The following properties capture known results from the literature that we assume as axioms: </p>
+<div class="definition_thmwrapper theorem-style-definition" id="def:exact_gumbel_convergence">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">27</span>
+    <span class="definition_thmtitle">Exact Gumbel Convergence Property</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#def:exact_gumbel_convergence">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/ExactGumbelConvergenceProperty" class="lean_decl">ExactGumbelConvergenceProperty</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   For a Gumbel grid and appropriate constants \(C_g, \sigma _g {\gt} 0\): </p>
+<div class="displaymath" id="a0000000047">
+  \[  \frac{T_{\text{Gumbel}}(n) - C_g \cdot n}{\sigma _g \cdot n^{1/3}} \xrightarrow {d} F_{\text{GUE}}  \]
+</div>
+<p> where \(F_{\text{GUE}}\) is the GUE Tracy-Widom distribution. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:time_constant_gumbel">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">28</span>
+    <span class="definition_thmtitle">Time Constant for Gumbel LPP</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#def:time_constant_gumbel">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/TimeConstantGumbelProperty" class="lean_decl">TimeConstantGumbelProperty</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   There exists a constant \(D_\ell {\gt} 0\) such that: </p>
+<div class="displaymath" id="a0000000048">
+  \[  \frac{T_{\text{Gumbel}}(n)}{n} \xrightarrow {\mathbb {P}} D_\ell  \]
+</div>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:time_constant_exp">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">29</span>
+    <span class="definition_thmtitle">Time Constant for Exponential LPP</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#def:time_constant_exp">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/TimeConstantExpProperty" class="lean_decl">TimeConstantExpProperty</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   There exists a constant \(D_L {\gt} 0\) such that: </p>
+<div class="displaymath" id="a0000000049">
+  \[  \frac{L_{\text{Exp}}(n)}{n} \xrightarrow {\mathbb {P}} D_L  \]
+</div>
+
+  </div>
+</div>
+<h1 id="a0000000018">6.3 Slutsky’s Theorem</h1>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:slutsky_upper_bound">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">30</span>
+    <span class="theorem_thmtitle">Slutsky Upper Bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#thm:slutsky_upper_bound">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/slutsky_upper_bound" class="lean_decl">slutsky_upper_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   For random variables \(X, Y\) and constants \(r, \varepsilon \): </p>
+<div class="displaymath" id="a0000000050">
+  \[  \mathbb {P}(X + Y \leq r) \leq \mathbb {P}(X \leq r + \varepsilon ) + \mathbb {P}(|Y| {\gt} \varepsilon )  \]
+</div>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:slutsky_lower_bound">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">31</span>
+    <span class="theorem_thmtitle">Slutsky Lower Bound</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#thm:slutsky_lower_bound">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/slutsky_lower_bound" class="lean_decl">slutsky_lower_bound</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   For random variables \(X, Y\) and constants \(r, \varepsilon \): </p>
+<div class="displaymath" id="a0000000051">
+  \[  \mathbb {P}(X \leq r - \varepsilon ) \leq \mathbb {P}(X + Y \leq r) + \mathbb {P}(|Y| {\gt} \varepsilon )  \]
+</div>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:slutsky_cdf">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">32</span>
+    <span class="theorem_thmtitle">Slutsky’s Theorem for CDFs</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#thm:slutsky_cdf">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000052"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#def:converges_in_prob_zero">Definition 25</a></li>
+          
+          <li><a href="sect0006.html#thm:slutsky_upper_bound">Theorem 30</a></li>
+          
+          <li><a href="sect0006.html#thm:slutsky_lower_bound">Theorem 31</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/slutsky_cdf" class="lean_decl">slutsky_cdf</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>    Suppose \(X_n \xrightarrow {d} F\) (convergence in distribution to a continuous CDF \(F\)) and \(Y_n \xrightarrow {\mathbb {P}} 0\). Then: </p>
+<div class="displaymath" id="a0000000053">
+  \[  X_n + Y_n \xrightarrow {d} F  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000052">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Fix \(r \in \mathbb {R}\) and \(\varepsilon {\gt} 0\). By Theorems <a href="sect0006.html#thm:slutsky_upper_bound">30</a> and <a href="sect0006.html#thm:slutsky_lower_bound">31</a>: </p>
+<div class="displaymath" id="a0000000054">
+  \begin{align*}  \mathbb {P}(X_n \leq r - \varepsilon ) - \mathbb {P}(|Y_n| {\gt} \varepsilon ) & \leq \mathbb {P}(X_n + Y_n \leq r) \\ & \leq \mathbb {P}(X_n \leq r + \varepsilon ) + \mathbb {P}(|Y_n| {\gt} \varepsilon ) \end{align*}
+</div>
+<p> Taking limits and using continuity of \(F\) gives the result. </p>
+
+  </div>
+</div>
+<h1 id="a0000000019">6.4 Auxiliary Convergence Lemmas</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:converges_in_prob_mul_zero">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">33</span>
+    <span class="lemma_thmtitle">Product Convergence</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#lem:converges_in_prob_mul_zero">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0006.html#def:converges_in_prob_zero">Definition 25</a></li>
+          
+          <li><a href="sect0006.html#def:converges_in_prob_const">Definition 26</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/converges_in_prob_mul_zero" class="lean_decl">converges_in_prob_mul_zero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>    If \(Y_n \xrightarrow {\mathbb {P}} c\) and \(a_n \to 0\), then \(a_n \cdot Y_n \xrightarrow {\mathbb {P}} 0\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:deterministic_factor_limit">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">34</span>
+    <span class="lemma_thmtitle">Deterministic Factor Limit</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0006.html#lem:deterministic_factor_limit">#</a>
+    
+    <a class="icon proof" href="sect0006.html#a0000000055"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://jameshstephens.github.io/GumbelLPP/docs/find/#doc/deterministic_factor_limit" class="lean_decl">deterministic_factor_limit</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   For \(\alpha {\gt} 2/3\): </p>
+<div class="displaymath" id="a0000000056">
+  \[  \frac{n}{\lfloor n^\alpha \rfloor \cdot n^{1/3}} \to 0 \text{ as } n \to \infty  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000055">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>We have: </p>
+<div class="displaymath" id="a0000000057">
+  \[  \frac{n}{\lfloor n^\alpha \rfloor \cdot n^{1/3}} \leq \frac{2n}{n^\alpha \cdot n^{1/3}} = 2n^{2/3 - \alpha }  \]
+</div>
+<p> Since \(\alpha {\gt} 2/3\), the exponent is negative and the limit is zero. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0005.html" title="Perturbation Analysis"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Approximate Gumbel Last Passage Percolation"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0007.html" title="Main Theorem"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

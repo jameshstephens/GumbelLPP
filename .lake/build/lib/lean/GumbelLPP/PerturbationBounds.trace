@@ -10,12 +10,6 @@
    "level": "trace"},
   {"message":
    "GumbelLPP/PerturbationBounds.lean:23:6: aesop: failed to prove the goal after exhaustive search.",
-   "level": "warning"},
-  {"message":
-   "GumbelLPP/PerturbationBounds.lean:25:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
-   "level": "warning"},
-  {"message":
-   "GumbelLPP/PerturbationBounds.lean:26:0: This line exceeds the 100 character limit, please shorten it!\n\nNote: This linter can be disabled with `set_option linter.style.longLine false`",
    "level": "warning"}],
  "inputs":
  [["GumbelLPP.PerturbationBounds:deps",
@@ -35,8 +29,8 @@
   ["/home/js/GumbelLPP/GumbelLPP/PerturbationBounds.lean", "f77ff036da4bac3c"],
   ["options",
    [["-DmaxSynthPendingDepth=3", "c78e353d34de85d4"],
-    ["-Dweak.linter.mathlibStandardSet=true", "8a155799906f2b42"],
+    ["-Dweak.linter.mathlibStandardSet=false", "28605bbdbbe35f32"],
     ["-DrelaxedAutoImplicit=false", "74a2b5546b55be80"],
     ["-Dpp.unicode.fun=true", "9b94070140457fab"]]],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "efddcfbd6fe9700f"}
+ "depHash": "c4df0c93003c7405"}
